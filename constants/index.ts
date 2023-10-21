@@ -105,6 +105,7 @@ export const whatWeTrain = () => {
 
   return what;
 };
+
 export const Impacts = () => {
   const what = useMemo(
     () => [
@@ -122,6 +123,48 @@ export const Impacts = () => {
         name: "Volunteer",
         icon: "/icons/ivol.svg",
         number: 30,
+      },
+    ],
+    []
+  );
+
+  return what;
+};
+
+export const partners = () => {
+  const what = useMemo(
+    () => [
+      {
+        name: "Blessing Solidarity Home Foundation (BSHF)",
+        location: "Bamenda, NW Region Cameroon, Africa",
+        contact: ["Mrs. Ahone Florence", "Tel: +237 677 029 767 "],
+      },
+      {
+        name: "Rainbow Orphanage",
+        location: "Lala Road, Mamfe SouthWest Region, Cameroon, Africa",
+        contact: [
+          "Mrs. Ahone Florence",
+          "Tel: +237 677 029 767 ",
+          " Email: ahoneflorence1@gmail.com",
+        ],
+      },
+      {
+        name: "St. Therese Orphanage",
+        location: "Yaounde, Center Region Cameroon, Africa",
+        contact: [
+          "Mrs. Ahone Florence",
+          "Tel: +237 677 029 767 ",
+          " Email: ahoneflorence1@gmail.com",
+        ],
+      },
+      {
+        name: "Shaping Destiny Orphanage",
+        location: "Yaounde, Center Region Cameroon, Africa",
+        contact: [
+          "Mrs. Ahone Florence",
+          "Tel: +237 677 029 767 ",
+          " Email: ahoneflorence1@gmail.com",
+        ],
       },
     ],
     []
