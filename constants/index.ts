@@ -84,3 +84,24 @@ export const whatWeDo = () => {
 
   return what;
 };
+export const whatWeTrain = () => {
+  const what = useMemo(
+    () => [
+      {
+        name: "Training for Mechanics",
+        icon: "/icons/mechanic.svg",
+      },
+      {
+        name: "Training for Builders",
+        icon: "/icons/builders.svg",
+      },
+      {
+        name: "Training for Agriculture",
+        icon: "/icons/agriculture.svg",
+      },
+    ],
+    []
+  );
+
+  return what;
+};

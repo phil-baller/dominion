@@ -1,4 +1,6 @@
 import { whatWeDo } from "@/constants";
+import Header from "@/components/header";
+
 import Image from "next/image";
 import React from "react";
 
@@ -6,9 +8,7 @@ const WhatweDo = () => {
   const whatWEDo = whatWeDo();
   return (
     <div className="bg-white text-[#111] p-20 flex gap-10 flex-col">
-      <p className="text-4xl self-center w-fit relative before:absolute before:w-3/4 before:mx-auto before:bottom-0 before:h-[3px] before:bg-primary">
-        What we Do
-      </p>
+      <Header content="What we Do" />
       <section className="flex items-center gap-8">
         {whatWEDo.map((what) => (
           <section

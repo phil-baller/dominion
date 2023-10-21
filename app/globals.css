@@ -88,9 +88,17 @@
   }
 
   .bgtext {
-    background-image: url(./../public/icons/bt.jpeg);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(./../public/icons/bt.jpeg), lightgray 50% / cover no-repeat;
     background-size: cover;
     background-position: center;
+  }
+
+  .what {
+    box-shadow: 0px 0px 34px 0px rgba(217, 212, 212, 0.15);
+  }
+
+  .clip {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 71%);
   }
 
   .hero {
