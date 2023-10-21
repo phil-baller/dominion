@@ -49,9 +49,8 @@ const Family = () => {
             <ChevronLeft />
           </button>
           {visibleImages.map((image, index) => (
-            <section className="mx-2">
+            <section className="mx-2" key={index}>
               <Image
-                key={index}
                 className="max-w-full max-h-full rounded  transition-opacity duration-300 ease-in-out clip"
                 src={image}
                 width={300}
