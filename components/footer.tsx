@@ -49,7 +49,7 @@ const Footer = () => {
         </p>
         <section className="flex items-center gap-6">
           {socials.map((social) => (
-            <Link href={social.path}>
+            <Link href={social.path} key={social.name}>
               <Image
                 src={social.icon}
                 width={24}
