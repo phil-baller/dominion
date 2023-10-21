@@ -1,7 +1,7 @@
 import React from "react";
 
 const BgText = () => {
-  return <div>BgText</div>;
+  return <section>BgText</section>;
 };
 
 export default BgText;

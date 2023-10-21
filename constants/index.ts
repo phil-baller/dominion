@@ -59,3 +59,28 @@ export const socialsIcons = () => {
 
   return socials;
 };
+
+export const whatWeDo = () => {
+  const what = useMemo(
+    () => [
+      {
+        name: "Volunteer",
+        icon: "/icons/volunteer.svg",
+        text: "Lorem ipsum dolor sit amet consectetur. Arcu in amet etiam pulvinar ullamcorper turpis tortor duis feugiat. Nibh mattis sapien enim a. Sed ac blandit cras in.",
+      },
+      {
+        name: "Donate",
+        icon: "/icons/donate.svg",
+        text: "Lorem ipsum dolor sit amet consectetur. Arcu in amet etiam pulvinar ullamcorper turpis tortor duis feugiat. Nibh mattis sapien enim a. Sed ac blandit cras in.",
+      },
+      {
+        name: "Fundraise",
+        icon: "/icons/fundraise.svg",
+        text: "Lorem ipsum dolor sit amet consectetur. Arcu in amet etiam pulvinar ullamcorper turpis tortor duis feugiat. Nibh mattis sapien enim a. Sed ac blandit cras in.",
+      },
+    ],
+    []
+  );
+
+  return what;
+};
