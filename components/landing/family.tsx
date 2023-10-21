@@ -49,14 +49,20 @@ const Family = () => {
             <ChevronLeft />
           </button>
           {visibleImages.map((image, index) => (
-            <Image
-              key={index}
-              className="max-w-full max-h-full rounded mx-2 transition-opacity duration-300 ease-in-out clip"
-              src={image}
-              width={300}
-              height={200}
-              alt={`slide ${index + 1}`}
-            />
+            <section className="mx-2">
+              <Image
+                key={index}
+                className="max-w-full max-h-full rounded  transition-opacity duration-300 ease-in-out clip"
+                src={image}
+                width={300}
+                height={200}
+                alt={`slide ${index + 1}`}
+              />
+              <section>
+                <p className="text-primary">Name</p>
+                <p>Position or Role</p>
+              </section>
+            </section>
           ))}
           <button
             className="absolute -right-10 top-1/2 transform -translate-y-1/2 hover:bg-primary hover:text-white slowmo px-3 py-1 rounded"

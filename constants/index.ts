@@ -105,3 +105,27 @@ export const whatWeTrain = () => {
 
   return what;
 };
+export const Impacts = () => {
+  const what = useMemo(
+    () => [
+      {
+        name: "Amount Raised",
+        icon: "/icons/ifund.svg",
+        number: 2.5,
+      },
+      {
+        name: "People helped",
+        icon: "/icons/ipeople.svg",
+        number: 500,
+      },
+      {
+        name: "Volunteer",
+        icon: "/icons/ivol.svg",
+        number: 30,
+      },
+    ],
+    []
+  );
+
+  return what;
+};
