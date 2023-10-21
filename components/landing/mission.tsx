@@ -40,7 +40,7 @@ const Mission = () => {
         ))}
       </section>
       <section className="max-w-5xl mx-auto w-full flex items-center justify-between relative">
-        {Array.from({ length: 3 }).map((i, index) => (
+        {Array.from({ length: 3 }).map((_, index) => (
           <p
             className="h-14 w-14 bg-white flex items-center justify-center rounded-full border border-[#111] border-dashed text-2xl z-10"
             key={index}
