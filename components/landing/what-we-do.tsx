@@ -9,7 +9,7 @@ const WhatweDo = () => {
   return (
     <div className="bg-white text-[#111] p-20 flex gap-10 flex-col">
       <Header content="What we Do" />
-      <section className="flex items-center gap-8">
+      <section className="flex items-center gap-8 max-w-7xl w-full mx-auto">
         {whatWEDo.map((what) => (
           <section
             className="bg-[#FBF6F6] p-6 flex flex-col gap-8 items-center rounded-lg"
