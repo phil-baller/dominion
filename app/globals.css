@@ -87,6 +87,12 @@
     background-position: center;
   }
 
+  .bgtext {
+    background-image: url(./../public/icons/bt.jpeg);
+    background-size: cover;
+    background-position: center;
+  }
+
   .hero {
     height: calc(100vh - 80px);
   }
