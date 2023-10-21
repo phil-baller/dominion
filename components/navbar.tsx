@@ -14,7 +14,8 @@ const Navbar = () => {
 
   const routes = navbarRoutes();
   return (
-    <header className="h-20 flex w-screen items-center px-20 justify-between sticky top-0 z-[999]">
+    <header className="h-20 flex w-full items-center px-20 justify-between sticky top-0 z-[999] overflow-hidden">
+      <div className="absolute inset-0 bg-[rgba(17, 17, 17, 1)]/50 backdrop-blur-lg z-[-1]" />
       <Logo />
 
       <nav>

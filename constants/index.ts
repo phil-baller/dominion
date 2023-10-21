@@ -29,3 +29,33 @@ export const navbarRoutes = () => {
 
   return routes;
 };
+
+export const socialsIcons = () => {
+  const socials = useMemo(
+    () => [
+      {
+        name: "facebook",
+        icon: "/icons/facebook.svg",
+        path: "#",
+      },
+      {
+        name: "Twitter",
+        icon: "/icons/twitter.svg",
+        path: "#",
+      },
+      {
+        name: "instagram",
+        icon: "/icons/instagram.svg",
+        path: "#",
+      },
+      {
+        name: "linkedin",
+        icon: "/icons/linkedin.svg",
+        path: "#",
+      },
+    ],
+    []
+  );
+
+  return socials;
+};

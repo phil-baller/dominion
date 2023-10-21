@@ -50,7 +50,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <main className="relative">
-          <section className="bg h-screen fixed top-0 left-0 w-screen -z-10" />
+          <section className="bg h-screen fixed top-0 left-0 w-full text-[#111] -z-10" />
           <section className="text-white z-50">{children}</section>
         </main>
       </body>
