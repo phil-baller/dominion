@@ -5,7 +5,7 @@ const BeforeAuthLayout = ({ children }: { children: ReactNode }) => {
   return (
     <main>
       <Navbar />
-      <section>{children}</section>
+      <section className="px-20">{children}</section>
     </main>
   );
 };

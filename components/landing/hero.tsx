@@ -18,7 +18,7 @@ const Hero = () => {
         commodo bibendum feugiat nibh nisi.
       </p>
 
-      <button className="bg-primary py-2 px-10 w-fit">Donate Now</button>
+      <button className="bg-primary py-3 px-10 w-fit">Donate Now</button>
     </section>
   );
 };

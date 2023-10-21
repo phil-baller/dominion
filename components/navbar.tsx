@@ -24,7 +24,7 @@ const Navbar = () => {
               href={route.path}
               key={index}
               className={cn(
-                "font-normal text-lg ",
+                "font-normal text-base",
                 pathname === route.path && "text-primary"
               )}
             >
