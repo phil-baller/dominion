@@ -19,7 +19,7 @@ const LandingPage = () => {
       <Video />
       <Family />
       <Impact />
-      <Blog />
+      <Blog isHeader />
       <Partners />
     </main>
   );
