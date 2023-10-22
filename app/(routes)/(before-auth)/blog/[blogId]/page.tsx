@@ -38,7 +38,7 @@ const BlogId = () => {
             </section>
             <ul className="ml-10 mt-10">
               {Array.from({ length: 6 }).map((_, index) => (
-                <li className="text-base list-disc">
+                <li className="text-base list-disc" key={index}>
                   Supporting a disabled orphan with a protruding bone
                 </li>
               ))}
