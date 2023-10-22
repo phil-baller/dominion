@@ -1,43 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { Roboto } from "next/font/google";
-import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Walking Dominion",
   description: "Software developer and visual",
 };
-
-const calibre = localFont({
-  src: [
-    {
-      path: "./calibre/CalibreLight.otf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "./calibre/CalibreRegular.otf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "./calibre/CalibreMedium.otf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "./calibre/CalibreSemibold.otf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "./calibre/CalibreBlack.otf",
-      weight: "900",
-      style: "normal",
-    },
-  ],
-});
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["500"] });
 
