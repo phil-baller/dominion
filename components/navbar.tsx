@@ -26,8 +26,7 @@ const Navbar = () => {
               key={index}
               className={cn(
                 "font-normal text-base",
-                pathname === route.path ||
-                  (pathname.includes(route.name) && "text-primary")
+                pathname === route.path && "text-primary"
               )}
             >
               {route.name}

@@ -172,3 +172,29 @@ export const partners = () => {
 
   return what;
 };
+
+export const contactForm = () => {
+  const what = useMemo(
+    () => [
+      {
+        name: "General Overseer",
+        fields: ["Evangelist Afuh Azong Gustave", "+971 58 163 8492"],
+      },
+      {
+        name: "President",
+        fields: ["Josephine Achu Ade", "+1 651 325 8966"],
+      },
+      {
+        name: "Website Administrator",
+        fields: ["Elvis Fusina", "fusinaelvis@gmail.com"],
+      },
+      {
+        name: "General Inquiries",
+        fields: ["widcointernational@gmail.com"],
+      },
+    ],
+    []
+  );
+
+  return what;
+};
