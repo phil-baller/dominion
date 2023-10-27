@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <main className="relative">
+        <main className="relative overflow-hidden">
           <section className="bg h-screen fixed top-0 left-0 w-full text-[#111] -z-10" />
           <section className="text-white z-50">{children}</section>
         </main>
