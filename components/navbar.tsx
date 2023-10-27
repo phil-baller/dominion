@@ -18,7 +18,7 @@ const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <header className="h-20 flex w-full items-center px-20 justify-between sticky top-0 z-[999] ">
+    <header className="h-20 flex w-full items-center px-20 justify-between fixed left-0 top-0 z-[999] ">
       <div className="absolute inset-0 bg-[rgba(17, 17, 17, 1)]/50 backdrop-blur-lg z-[-1]" />
       <Logo />
 

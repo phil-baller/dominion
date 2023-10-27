@@ -28,7 +28,7 @@ const Mission = () => {
           for apprenticeship including;
         </p>
       </section>
-      <section className="flex max-w-7xl mx-auto gap-8 w-full">
+      <section className="flex lg:flex-row flex-col max-w-7xl mx-auto gap-8 w-full">
         {things.map((thing) => (
           <section
             key={thing.name}
@@ -39,7 +39,7 @@ const Mission = () => {
           </section>
         ))}
       </section>
-      <section className="max-w-5xl mx-auto w-full flex items-center justify-between relative">
+      <section className="max-w-5xl mx-auto w-full lg:flex items-center justify-between relative hidden">
         {Array.from({ length: 3 }).map((_, index) => (
           <p
             className="h-14 w-14 bg-white flex items-center justify-center rounded-full border border-[#111] border-dashed text-2xl z-10"

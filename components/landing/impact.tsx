@@ -8,7 +8,7 @@ const Impact = () => {
   return (
     <section className="bg-white text-[#111] p-20 flex gap-10 flex-col">
       <Header content="Impact" />
-      <section className="max-w-7xl mx-auto flex gap-10  w-full">
+      <section className="max-w-7xl mx-auto flex gap-10  w-full lg:flex-row flex-col ">
         {impacts.map((impact) => (
           <section
             key={impact.name}

@@ -9,7 +9,7 @@ const Partners = () => {
     <section className="bg-white text-[#111] p-20 flex gap-10 flex-col">
       <Header content="Our Partners" />
 
-      <section className="max-w-7xl mx-auto flex justify-between w-full gap-16">
+      <section className="max-w-7xl mx-auto flex lg:flex-row flex-col justify-between w-full gap-16">
         {parts.map((part) => (
           <section key={part.name} className="flex-1 flex flex-col gap-4">
             <p className="text-2xl">{part.name}</p>
