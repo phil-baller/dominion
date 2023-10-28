@@ -14,7 +14,7 @@ const HamburgerIcon: React.FC<hamburgerIcon> = ({ onClick, isActive }) => {
         <span
           className={` ${
             isActive &&
-            "even:opacity-0 even:group-hover:opacity-0 first:-rotate-45 last:rotate-45 last:top-0 last:absolute mt-6 mr-10"
+            "even:opacity-0 even:group-hover:opacity-0 first:-rotate-45 last:rotate-45 last:top-0 last:absolute mt-14 -mr-4"
           } h-[2px] w-8 group-hover:opacity-75 transition ${
             isActive ? "bg-black" : "bg-white"
           }`}
