@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
   :root {
     --background: 0 0% 7%, 1;
@@ -37,39 +35,22 @@
 }
 
 @layer base {
-
   html {
     position: relative;
   }
 
   body {
     @apply bg-background text-foreground;
-
   }
 
   .slowmo {
     @apply transition-all duration-300;
   }
 
-  .mode {
-    @apply fixed flex items-center justify-center right-[50px] top-[50px] w-5 h-5 -z-20;
-  }
-
-  .darkmode {
-    @apply relative scale-0 left-0 right-0 bottom-0 top-0 w-[500vw] h-[500vh] rounded-full dark:bg-secondary dark:scale-125 flex duration-700 -z-50;
-    flex: 0 0 auto;
-  }
-
-
-  .links {
-    @apply relative w-0 before:w-full before:bg-zinc-700 before:absolute before:h-[2px] before:rounded-md before:duration-300 before:-bottom-[1px] before:scale-x-0 hover:before:scale-x-100
-  }
-
   .triangle {
     width: 10px;
     height: 10px;
-    background-image:
-      linear-gradient(to bottom right, transparent 50%, red 0),
+    background-image: linear-gradient(to bottom right, transparent 50%, red 0),
       linear-gradient(to top right, red 50%, transparent 0);
     background-size: 50% 100%;
     background-repeat: no-repeat;
@@ -88,7 +69,12 @@
   }
 
   .bgtext {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(./../public/icons/bt.jpeg), lightgray 50% / cover no-repeat;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 100%
+      ),
+      url(./../public/icons/bt.jpeg), lightgray 50% / cover no-repeat;
     background-size: cover;
     background-position: center;
   }
@@ -104,4 +90,8 @@
   .hero {
     height: calc(100vh - 80px);
   }
+}
+
+.padding {
+  @apply lg:px-20 px-4 py-20;
 }

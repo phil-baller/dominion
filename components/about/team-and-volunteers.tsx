@@ -3,7 +3,7 @@ import Header from "../header";
 
 const TeamAndVolunteers = () => {
   return (
-    <section className="text-[#111] bg-white flex flex-col p-20 gap-20 ">
+    <section className="text-[#111] bg-white flex flex-col padding gapadding ">
       <Header content="Our Team and Volunteers" />
       <section className="max-w-7xl mx-auto w-full grid lg:grid-cols-4 grid-cols-1 gap-4">
         {Array.from({ length: 12 }).map((_, index) => (

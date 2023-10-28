@@ -7,7 +7,7 @@ import React from "react";
 const WhatweDo = () => {
   const whatWEDo = whatWeDo();
   return (
-    <div className="bg-white text-[#111] p-20 flex gap-10 flex-col">
+    <div className="bg-white text-[#111] padding flex gap-10 flex-col">
       <Header content="What we Do" />
       <section className="flex lg:flex-row flex-col  items-center gap-8 max-w-7xl w-full mx-auto">
         {whatWEDo.map((what) => (

@@ -6,7 +6,7 @@ import Image from "next/image";
 const Mission = () => {
   const things = whatWeTrain();
   return (
-    <section className="bg-white text-[#111] p-20 flex flex-col gap-6">
+    <section className="bg-white text-[#111] padding flex flex-col gap-6">
       <Header
         content="Answering the Call:"
         spanText="A Mission of Love and Hope"

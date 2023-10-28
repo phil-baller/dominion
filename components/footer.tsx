@@ -13,8 +13,8 @@ const Footer = () => {
   const pathname = usePathname();
   const socials = socialsIcons();
   return (
-    <footer className="bg-[#111] flex flex-col p-20 gap-20">
-      <section className="lg:w-2/4 w-full flex gap-20 lg:flex-row flex-col ">
+    <footer className="bg-[#111] flex flex-col padding gapadding">
+      <section className="lg:w-2/4 w-full flex gapadding lg:flex-row flex-col ">
         <section className="flex flex-1 flex-col gap-[26px]">
           <Logo />
           <p>

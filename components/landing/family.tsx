@@ -40,7 +40,7 @@ const Family = () => {
   };
 
   return (
-    <section className="bg-white text-[#111] p-20 flex gap-10 flex-col">
+    <section className="bg-white text-[#111] padding flex gap-10 flex-col">
       <Header content="Our Family" />
 
       <section className="w-full flex items-center gap-10">

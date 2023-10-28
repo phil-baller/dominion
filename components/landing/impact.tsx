@@ -6,7 +6,7 @@ import Image from "next/image";
 const Impact = () => {
   const impacts = Impacts();
   return (
-    <section className="bg-white text-[#111] p-20 flex gap-10 flex-col">
+    <section className="bg-white text-[#111] padding flex gap-10 flex-col">
       <Header content="Impact" />
       <section className="max-w-7xl mx-auto flex gap-10  w-full lg:flex-row flex-col ">
         {impacts.map((impact) => (

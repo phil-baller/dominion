@@ -7,7 +7,7 @@ const BlogId = () => {
   return (
     <main className="h-fit">
       <Hero />
-      <section className="p-20 bg-white text-[#111]">
+      <section className="padding bg-white text-[#111]">
         <section className="flex gap-10 max-w-7xl w-full mx-auto ">
           <section className="flex-[2]">
             <section className="w-full bg-slate-500 h-80" />
@@ -46,7 +46,7 @@ const BlogId = () => {
           </section>
         </section>
       </section>
-      <section className="p-20 bg-white text-[#111]">
+      <section className="padding bg-white text-[#111]">
         <section className="flex gap-10 max-w-7xl w-full mx-auto">
           <section className="grid lg:grid-cols-3 grid-cols-1 gap-10 max-w-7xl w-full mx-auto">
             {Array.from({ length: 3 }).map((_, index) => (

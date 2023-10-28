@@ -4,7 +4,7 @@ import { Search } from "lucide-react";
 
 const Blogs = () => {
   return (
-    <section className="bg-white text-[#111] p-20 flex gap-10 flex-col">
+    <section className="bg-white text-[#111] padding flex gap-10 flex-col">
       <section className="px-2 max-w-sm w-full mx-auto border flex items-center gap-2">
         <input
           type="text"

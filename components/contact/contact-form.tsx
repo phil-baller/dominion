@@ -4,7 +4,7 @@ import React from "react";
 const ContactForm = () => {
   const contacts = contactForm();
   return (
-    <section className="p-20 text-[#111] bg-white">
+    <section className="padding text-[#111] bg-white">
       <section className="max-w-7xl mx-auto w-full flex gap-10 lg:flex-row flex-col-reverse">
         <section className="flex-[2] flex flex-col gap-10">
           <p className="lg:text-4xl text-xl font-bold ">Leave us a message</p>

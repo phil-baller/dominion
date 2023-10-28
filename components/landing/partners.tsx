@@ -6,7 +6,7 @@ import Image from "next/image";
 const Partners = () => {
   const parts = partners();
   return (
-    <section className="bg-white text-[#111] p-20 flex gap-10 flex-col">
+    <section className="bg-white text-[#111] padding flex gap-10 flex-col">
       <Header content="Our Partners" />
 
       <section className="max-w-7xl mx-auto flex lg:flex-row flex-col justify-between w-full gap-16">

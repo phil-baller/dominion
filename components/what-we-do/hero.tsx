@@ -4,7 +4,7 @@ import Donate from "../donatebtn";
 
 const Hero = () => {
   return (
-    <section className="lg:h-80 h-96 px-20 relative flex justify-center flex-col gap-5">
+    <section className="h-96 lg:px-20 px-4 relative flex justify-center flex-col gap-5">
       <PageTextHero content="What we do" />
       <p className="lg:text-2xl text-base">
         Put a smile on the faces of these childres

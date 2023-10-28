@@ -3,7 +3,7 @@ import PageTextHero from "../page-hero-text";
 
 const Hero = () => {
   return (
-    <section className="h-80 px-20 relative flex items-center">
+    <section className="h-96 lg:px-20 px-4 relative flex items-center">
       <PageTextHero content="About" />
     </section>
   );
