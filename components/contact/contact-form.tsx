@@ -24,7 +24,7 @@ const ContactForm = () => {
             <textarea
               className="flex outline-none border w-full h-52 px-2 resize-none"
               placeholder="Message"
-            ></textarea>
+            />
             <section className="w-full flex justify-end">
               <button className="bg-primary py-3 px-10 w-fit">Send</button>
             </section>
