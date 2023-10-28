@@ -1,6 +1,10 @@
 "use client";
 
 import React, { useState, ChangeEvent, useCallback, FormEvent } from "react";
+import axios from "axios";
+import { signIn } from "next-auth/react";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 type authVariant = "LOGIN" | "REGISTER";
 type UserData = {
@@ -11,11 +15,14 @@ type UserData = {
 
 const Authform = () => {
   const [authState, setAuthState] = useState<authVariant>("LOGIN");
+  const [isLoading, setIsLoading] = useState(false);
   const [userData, setUserData] = useState<UserData>({
     username: "",
     email: "",
     password: "",
   });
+
+  const router = useRouter();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -35,10 +42,29 @@ const Authform = () => {
 
   const { username, email, password } = userData;
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    console.log(userData);
+    if (authState === "LOGIN") {
+      await axios.post("/");
+    }
+
+    if (authState === "LOGIN") {
+      signIn("credentials", {
+        ...userData,
+        redirect: false,
+      })
+        .then((callback) => {
+          if (callback?.error) {
+            toast.error("Invalid credentials!");
+          }
+
+          if (callback?.ok) {
+            router.push("/blog");
+          }
+        })
+        .finally(() => setIsLoading(false));
+    }
   };
 
   return (
@@ -80,7 +106,7 @@ const Authform = () => {
         <section className="flex flex-col  gap-2 w-full">
           <p>password</p>
           <input
-            type="text"
+            type="password"
             className="flex outline-none flex-1 p-2 border bg-white text-[#111]"
             placeholder="Password"
             name="password"
