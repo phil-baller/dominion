@@ -10,16 +10,33 @@ import HamburgerIcon from "./hamburger";
 
 const Navbar = () => {
   const pathname = usePathname();
-
-  console.log(pathname);
-
   const routes = navbarRoutes();
 
   const [isActive, setIsActive] = useState(false);
+  const [bgColor, setBgColor] = useState(false);
+
+  // console.log(pathname);
+
+  function changeNavBackgroundColor() {
+    if (window.scrollY >= 70) {
+      setBgColor(true);
+    } else {
+      setBgColor(false);
+    }
+  }
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", changeNavBackgroundColor);
+  }
 
   return (
     <header className="h-20 flex w-full items-center px-20 justify-between fixed left-0 top-0 z-[999] ">
-      <div className="absolute inset-0 bg-[rgba(17, 17, 17, 1)]/50 backdrop-blur-lg z-[-1]" />
+      <div
+        className={cn(
+          bgColor && " bg-[rgba(17, 17, 17, 1)]/50 backdrop-blur-lg z-[-1]",
+          "absolute inset-0 duration-300"
+        )}
+      />
       <Logo />
 
       <nav>
