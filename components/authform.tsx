@@ -30,7 +30,7 @@ const Authform = () => {
           />
         </section>
         <section>
-          <button className="bg-primary py-3 px-10 w-fit">Donate Now</button>
+          <button className="bg-primary py-3 px-10 w-fit">Login</button>
         </section>
       </form>
     </section>

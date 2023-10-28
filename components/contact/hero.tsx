@@ -1,12 +1,13 @@
 import React from "react";
 import PageTextHero from "../page-hero-text";
+import Donate from "../donatebtn";
 
 const Hero = () => {
   return (
-    <section className="h-80 px-20 relative flex justify-center flex-col gap-5">
+    <section className="lg:h-80 h-96 px-20 relative flex justify-center flex-col gap-5">
       <PageTextHero content="Contact Us" />
-      <p className="text-2xl ">Where to find us!!</p>
-      <button className="bg-primary py-3 px-10 w-fit">Donate Now</button>
+      <p className="lg:text-2xl text-base">Where to find us!!</p>
+      <Donate />
     </section>
   );
 };

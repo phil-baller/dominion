@@ -1,9 +1,10 @@
 import Image from "next/image";
 import React from "react";
+import Donate from "../donatebtn";
 
 const Hero = () => {
   return (
-    <section className="hero py-32 flex flex-col gap-5 relative px-20">
+    <section className="h-screen py-32 flex flex-col gap-5 relative px-20">
       <p className="text-primary text-2xl">Together</p>
       <h1 className="font-black text-[64px] leading-[70px]">
         Let’s make a <br /> difference
@@ -19,7 +20,7 @@ const Hero = () => {
         commodo bibendum feugiat nibh nisi.
       </p>
 
-      <button className="bg-primary py-3 px-10 w-fit">Donate Now</button>
+      <Donate />
 
       <section className="bg-white/90 absolute  right-20 w-fit p-3 flex gap-2 h-[112px] -bottom-14 ">
         <Image

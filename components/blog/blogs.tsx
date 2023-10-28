@@ -13,7 +13,7 @@ const Blogs = () => {
         />
         <Search className="text-primary cursor-pointer" />
       </section>
-      <section className="grid grid-cols-3 gap-10 max-w-7xl w-full mx-auto">
+      <section className="grid lg:grid-cols-3 grid-cols-1 gap-10 max-w-7xl w-full mx-auto">
         {Array.from({ length: 6 }).map((_, index) => (
           <Post index={index} key={index} />
         ))}

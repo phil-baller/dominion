@@ -4,7 +4,7 @@ import React from "react";
 const Purpose = () => {
   return (
     <section className="text-[#111] bg-white flex flex-col p-20 gap-20 ">
-      <section className="max-w-7xl mx-auto w-full flex gap-20">
+      <section className="max-w-7xl mx-auto w-full flex gap-20 lg:flex-row flex-col-reverse">
         <section className="flex flex-col gap-4 flex-1">
           <p className="text-5xl">Our Purpose</p>
           <p className="flex flex-col gap-5">
@@ -29,9 +29,9 @@ const Purpose = () => {
           <section className="absolute w-full h-full z-0 bg-primary -left-10 -bottom-10" />
         </section>
       </section>
-      <section className="max-w-7xl mx-auto w-full flex gap-20">
+      <section className="max-w-7xl mx-auto w-full flex gap-20 lg:flex-row flex-col">
         <section className="flex flex-col gap-4">
-          <p className="text-5xl">Our Purpose</p>
+          <p className="lg:text-5xl text-xl font-bold">Our Purpose</p>
           <p>
             Walking in Dominion international charity organization, united with
             the world to overcome physical and spiritual poverty, moral and
@@ -39,7 +39,7 @@ const Purpose = () => {
           </p>
         </section>
         <section className="flex flex-col gap-4">
-          <p className="text-5xl">Our Mission</p>
+          <p className="lg:text-5xl text-xl font-bold">Our Mission</p>
           <p>
             We empower and equip the world to transform the poor and their
             communities physically, mentally, morally, and spiritually

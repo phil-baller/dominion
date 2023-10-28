@@ -27,7 +27,7 @@ const BlogId = () => {
               </section>
             </section>
           </section>
-          <section className="flex-1">
+          <section className="lg:flex-1 hidden">
             <section className="px-2 w-full mx-auto border flex items-center gap-2 ">
               <input
                 type="text"
@@ -48,7 +48,7 @@ const BlogId = () => {
       </section>
       <section className="p-20 bg-white text-[#111]">
         <section className="flex gap-10 max-w-7xl w-full mx-auto">
-          <section className="grid grid-cols-3 gap-10 max-w-7xl w-full mx-auto">
+          <section className="grid lg:grid-cols-3 grid-cols-1 gap-10 max-w-7xl w-full mx-auto">
             {Array.from({ length: 3 }).map((_, index) => (
               <Post index={index} key={index} />
             ))}

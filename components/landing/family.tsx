@@ -20,7 +20,10 @@ const Family = () => {
 
   useEffect(() => {
     const loadVisibleImages = () => {
-      setVisibleImages(images.slice(currentIndex, currentIndex + 4));
+      const numVisibleImages = window.innerWidth < 768 ? 1 : 4; // Change the breakpoint (768) as needed
+      setVisibleImages(
+        images.slice(currentIndex, currentIndex + numVisibleImages)
+      );
     };
 
     loadVisibleImages();
