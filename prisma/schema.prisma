@@ -16,6 +16,7 @@ model User {
   username String?
   email    String
   password String
+  userId   String
 }
 
 model Post {
