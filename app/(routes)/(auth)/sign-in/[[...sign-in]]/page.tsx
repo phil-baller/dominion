@@ -1,10 +1,10 @@
+import Authform from "@/components/authform";
 import React from "react";
 
 const Login = () => {
   return (
     <main className="h-full">
-      {/* <Authform /> */}
-      this is the begining
+      <Authform />
     </main>
   );
 };
