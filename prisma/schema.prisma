@@ -24,4 +24,5 @@ model Post {
   imageUrl String
   desc     String
   userId   String
+  postId   String @unique @default(uuid())
 }

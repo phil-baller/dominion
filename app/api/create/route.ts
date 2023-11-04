@@ -55,3 +55,16 @@ export async function POST(req: Request) {
     });
   }
 }
+
+export async function GET() {
+  try {
+    const posts = await db.post.findMany();
+
+    return posts;
+  } catch (error: any) {
+    console.log("ERROR WHILE GETTING POST", error.message);
+    return new NextResponse("Internal server error", {
+      status: 500,
+    });
+  }
+}
