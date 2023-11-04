@@ -12,6 +12,7 @@ export async function POST(req: Request) {
       return new NextResponse("Unauthorized!", {
         status: 400,
       });
+    //
 
     const user = await db.user.findUnique({
       where: {
@@ -44,10 +45,14 @@ export async function POST(req: Request) {
         userId: user.userId,
       },
     });
+
+    //
     return NextResponse.json({
       msg: "Created succesfully",
       post,
     });
+
+    //
   } catch (error: any) {
     console.log("ERROR WHILE CREATING POST", error.message);
     return new NextResponse("Internal server error", {

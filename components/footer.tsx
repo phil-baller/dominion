@@ -12,9 +12,10 @@ const Footer = () => {
   const routes = navbarRoutes();
   const pathname = usePathname();
   const socials = socialsIcons();
+
   return (
     <footer className="bg-[#111] flex flex-col padding gapadding">
-      <section className="lg:w-2/4 w-full flex gapadding lg:flex-row flex-col ">
+      <section className="lg:w-2/4 w-full gap-20 flex gapadding lg:flex-row flex-col ">
         <section className="flex flex-1 flex-col gap-[26px]">
           <Logo />
           <p>
