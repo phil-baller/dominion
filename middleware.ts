@@ -6,9 +6,9 @@ export default authMiddleware({
   publicRoutes: [
     "/api/:path*",
     "/",
-    "/sign-in*",
-    "/api/*",
-    "/sign-up*",
+    "/sign-in",
+    "/api/",
+    "/sign-up",
     "/blog",
     "/about",
     "/what-we-do",
