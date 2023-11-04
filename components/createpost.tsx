@@ -3,6 +3,7 @@
 import axios from "axios";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { toast } from "sonner";
+import { UploadButton } from "@/lib/utils";
 
 interface POSTDATA {
   title: string;
@@ -85,12 +86,18 @@ const CreatePost = () => {
           <section className="flex flex-col  gap-10 w-full">
             <p className="capitalize text-2xl">upload photo</p>
             <section className="flex-1">
-              <label htmlFor="file">
-                <input type="file" name="file" id="file" className="hidden" />
-                <span className="cursor-pointer border py-3 px-10 lg:w-fit w-full text-primary capitalize">
-                  Select photo
-                </span>
-              </label>
+              <UploadButton
+                endpoint="imageUploader"
+                onClientUploadComplete={(res) => {
+                  // Do something with the response
+                  console.log("Files: ", res);
+                  alert("Upload Completed");
+                }}
+                onUploadError={(error: Error) => {
+                  // Do something with the error.
+                  alert(`ERROR! ${error.message}`);
+                }}
+              />
             </section>
           </section>
         </section>

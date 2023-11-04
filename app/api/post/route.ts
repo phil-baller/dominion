@@ -27,7 +27,7 @@ export async function POST(req: Request) {
 
     const { imageUrl, desc, userId: id } = body;
 
-    console.log(body);
+    // console.log(body);
 
     if (!desc || !id) {
       return new NextResponse("These fields are requuired", {
