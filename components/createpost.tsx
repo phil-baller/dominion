@@ -1,12 +1,63 @@
 "use client";
 
-import React from "react";
+import axios from "axios";
+import React, { ChangeEvent, FormEvent, useState } from "react";
+import { toast } from "sonner";
+
+interface POSTDATA {
+  title: string;
+  desc: string;
+  imageUrl?: string;
+}
 
 const CreatePost = () => {
+  const [postData, setPostData] = useState<POSTDATA>({
+    title: "",
+    desc: "",
+    imageUrl: "",
+  });
+
+  const { title, desc, imageUrl } = postData;
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+
+    setPostData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    try {
+      // console.log(postData);
+
+      const res = await axios.post("/api/post", {
+        ...postData,
+        userId: "sk_test_XG5tVr0LwHa3GOGZ1rK9K9YeW3UzKWNdIY2wdcYgAV",
+      });
+
+      if (res.status) {
+        toast.success("Post created successfully");
+        setPostData({
+          title: "",
+          desc: "",
+          imageUrl: "",
+        });
+      }
+    } catch (error: any) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <section className="max-w-7xl mx-auto flex flex-col gap-10 w-full">
       <h1 className="font-bold text-4xl">Enter blog post information</h1>
-      <form className="flex flex-col gap-20">
+      <form className="flex flex-col gap-20" onSubmit={handleSubmit}>
         <section className="flex gap-20">
           <section className="flex flex-col  gap-10 w-full">
             <section className="flex flex-col gap-4">
@@ -14,7 +65,10 @@ const CreatePost = () => {
               <input
                 type="text"
                 className="flex outline-none flex-1 p-2 border bg-white text-[#111]"
-                placeholder="Password"
+                placeholder="Title"
+                name="title"
+                value={title}
+                onChange={handleChange}
               />
             </section>
             <section className="flex flex-col gap-4">
@@ -22,6 +76,9 @@ const CreatePost = () => {
               <textarea
                 className="flex outline-none border w-full h-52 px-2 resize-none"
                 placeholder="Message"
+                name="desc"
+                value={desc}
+                onChange={handleChange}
               />
             </section>
           </section>

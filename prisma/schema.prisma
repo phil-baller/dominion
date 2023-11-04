@@ -20,9 +20,9 @@ model User {
 }
 
 model Post {
-  id       Int    @id @default(autoincrement())
-  imageUrl String
+  id       Int     @id @default(autoincrement())
+  imageUrl String?
   desc     String
   userId   String
-  postId   String @unique @default(uuid())
+  postId   String  @unique @default(uuid())
 }
