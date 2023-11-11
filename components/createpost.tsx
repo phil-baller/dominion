@@ -1,9 +1,9 @@
 "use client";
 
+import { UploadButton } from "@/utils/uploadthing";
 import axios from "axios";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { toast } from "sonner";
-import { UploadButton } from "@/lib/utils";
 
 interface POSTDATA {
   title: string;

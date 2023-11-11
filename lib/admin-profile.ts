@@ -16,9 +16,9 @@ export const initialProfile = async () => {
 
   const newProfile = await db.user.create({
     data: {
-      userId: "sk_test_XG5tVr0LwHa3GOGZ1rK9K9YeW3UzKWNdIY2wdcYgAV",
-      username: `dominion is walking`,
-      email: "walkingindominion@gmail.com",
+      userId: user.id,
+      username: user.username,
+      email: user.emailAddresses[0].emailAddress
     },
   });
 
