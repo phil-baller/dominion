@@ -2,6 +2,7 @@
 
 import { useUploadThing } from "@/utils/uploadthing";
 import axios from "axios";
+import Image from "next/image";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { toast } from "sonner";
 
@@ -18,7 +19,7 @@ const CreatePost = () => {
     imageUrl: "",
   });
 
-  const [files, setFiles] = useState<File[] | undefined>();
+  const [files, setFiles] = useState<File[] | undefined>([]);
   const { startUpload } = useUploadThing("media");
 
   const { title, desc, imageUrl } = postData;
@@ -43,29 +44,23 @@ const CreatePost = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (files) {
+      try {
+        const imgRes = await startUpload(files);
 
-    try {
-      // console.log(postData);
-
-      const res = await axios.post("/api/post", {
-        ...postData,
-        userId: "sk_test_XG5tVr0LwHa3GOGZ1rK9K9YeW3UzKWNdIY2wdcYgAV",
-      });
-
-      if (res.status) {
-        toast.success("Post created successfully");
-        setPostData({
-          title: "",
-          desc: "",
-          imageUrl: "",
-        });
+        if (imgRes && imgRes[0].url) {
+          setPostData((prev) => ({
+            ...prev,
+            imageUrl: imgRes[0].url,
+          }));
+        }
+      } catch (error: any) {
+        console.log(error.message);
       }
-    } catch (error: any) {
-      console.log(error.message);
+    } else {
+      return toast.error("Image is required");
     }
   };
-
-  console.log(files);
 
   return (
     <section className="max-w-7xl mx-auto flex flex-col gap-10 w-full">
@@ -97,7 +92,7 @@ const CreatePost = () => {
           </section>
           <section className="flex flex-col  gap-10 w-full">
             <p className="capitalize text-2xl">upload photo</p>
-            <section className="flex-1">
+            <section className="flex-1 flex flex-col gap-6">
               <label htmlFor="file">
                 <input
                   type="file"
@@ -110,6 +105,16 @@ const CreatePost = () => {
                   Select photo
                 </span>
               </label>
+
+              {files && files.length > 0 && (
+                <Image
+                  src={imageUrl ? imageUrl : URL.createObjectURL(files[0])}
+                  alt="nothing"
+                  width={200}
+                  height={200}
+                  className="rounded-md"
+                />
+              )}
             </section>
           </section>
         </section>
