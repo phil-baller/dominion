@@ -1,6 +1,6 @@
 "use client";
 
-import { UploadButton } from "@/utils/uploadthing";
+import { useUploadThing } from "@/utils/uploadthing";
 import axios from "axios";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { toast } from "sonner";
@@ -18,6 +18,9 @@ const CreatePost = () => {
     imageUrl: "",
   });
 
+  const [files, setFiles] = useState<File[] | undefined>();
+  const { startUpload } = useUploadThing("media");
+
   const { title, desc, imageUrl } = postData;
 
   const handleChange = (
@@ -29,6 +32,13 @@ const CreatePost = () => {
       ...prev,
       [name]: value,
     }));
+  };
+
+  const handleChangeImage = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      // Explicitly specify the type for setFiles
+      setFiles(Array.from(e.target.files) as File[]);
+    }
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -54,6 +64,8 @@ const CreatePost = () => {
       console.log(error.message);
     }
   };
+
+  console.log(files);
 
   return (
     <section className="max-w-7xl mx-auto flex flex-col gap-10 w-full">
@@ -86,18 +98,18 @@ const CreatePost = () => {
           <section className="flex flex-col  gap-10 w-full">
             <p className="capitalize text-2xl">upload photo</p>
             <section className="flex-1">
-              <UploadButton
-                endpoint="imageUploader"
-                onClientUploadComplete={(res) => {
-                  // Do something with the response
-                  console.log("Files: ", res);
-                  alert("Upload Completed");
-                }}
-                onUploadError={(error: Error) => {
-                  // Do something with the error.
-                  alert(`ERROR! ${error.message}`);
-                }}
-              />
+              <label htmlFor="file">
+                <input
+                  type="file"
+                  name="file"
+                  id="file"
+                  className="hidden"
+                  onChange={handleChangeImage}
+                />
+                <span className="cursor-pointer border py-3 px-10 lg:w-fit w-full text-primary capitalize">
+                  Select photo
+                </span>
+              </label>
             </section>
           </section>
         </section>
