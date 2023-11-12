@@ -1,13 +1,13 @@
 "use client";
 
-import { postData } from "@/lib/reactquerry";
+import { PostData } from "@/lib/reactquerry";
 import PostComponent from "./landing/post";
 import { Post } from "@prisma/client";
 import PostSkeleton from "./skeletons/postSkeleton";
 
 export const TobeSeen = () => {
   //
-  const posts = postData();
+  const posts = PostData();
 
   if (posts.isPending) {
     return (
