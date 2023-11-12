@@ -79,7 +79,7 @@ const CreatePost = ({ userId }: { userId: string | null }) => {
     }
 
     try {
-      const { data } = await axios.post("/api/post", { ...postData, userId });
+      const { data } = await axios.post("/api/blog", { ...postData, userId });
 
       const requestBody = {
         imageUrl: "",

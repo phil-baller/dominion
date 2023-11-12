@@ -1,22 +1,19 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-
-interface Params {
-  postId: string;
-}
+import { Params } from "@/types";
 
 export async function GET(req: Request, { params }: { params: Params }) {
   try {
-    const { postId } = params;
+    const { blogId } = params;
 
-    if (!postId)
-      return new NextResponse("postID is not provided", {
+    if (!blogId)
+      return new NextResponse("blogId is not provided", {
         status: 400,
       });
 
     const post = await db.post.findUnique({
       where: {
-        id: postId,
+        id: blogId,
       },
     });
 

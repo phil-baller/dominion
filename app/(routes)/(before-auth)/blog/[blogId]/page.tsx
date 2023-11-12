@@ -1,31 +1,20 @@
+import Blog from "@/components/blog";
 import Hero from "@/components/blog/hero";
-import Post from "@/components/landing/post";
+import SingleBlog from "@/components/singleBlog";
+import { Params } from "@/types";
 import { Search } from "lucide-react";
 import React from "react";
 
-const BlogId = () => {
+const BlogId = ({ params }: { params: Params }) => {
+  const { blogId } = params;
+
   return (
     <main className="h-fit">
       <Hero />
       <section className="padding bg-white text-[#111]">
-        <section className="flex gap-10 max-w-7xl w-full mx-auto ">
+        <section className="flex gap-10 max-w-2xl w-full mx-auto ">
           <section className="flex-[2]">
-            <section className="w-full bg-slate-500 h-80" />
-            <section className="flex flex-col gap-4 px-2 mt-3">
-              <p className="text-2xl">
-                Supporting a disabled orphan with a protruding bone
-              </p>
-              <p className="font-thin">
-                Lorem ipsum dolor sit amet consectetur. Sit amet dignissim
-                fringilla tortor id mattis enim egestas. Fames congue mi urna
-                non senectus et. In et tincidunt nibh sapien dui. Sem consequat
-                sagittis.
-              </p>
-              <section className="flex items-center justify-between mt-5">
-                <p>By admin</p>
-                <p>21/10/2023</p>
-              </section>
-            </section>
+            <SingleBlog blogId={blogId} />
           </section>
           <section className="lg:flex-1 hidden">
             <section className="px-2 w-full mx-auto border flex items-center gap-2 ">
@@ -46,15 +35,7 @@ const BlogId = () => {
           </section>
         </section>
       </section>
-      <section className="padding bg-white text-[#111]">
-        <section className="flex gap-10 max-w-7xl w-full mx-auto">
-          <section className="grid lg:grid-cols-3 grid-cols-1 gap-10 max-w-7xl w-full mx-auto">
-            {Array.from({ length: 3 }).map((_, index) => (
-              <Post index={index} key={index} />
-            ))}
-          </section>
-        </section>
-      </section>
+      <Blog />
     </main>
   );
 };

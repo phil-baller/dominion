@@ -12,14 +12,9 @@ export function isBase64Image(imageData: string) {
   return base64Regex.test(imageData);
 }
 
-export function formatDate(inputDateString: string): string {
-  const inputDate = new Date(inputDateString);
-  const options: Intl.DateTimeFormatOptions = {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  };
+export function formatDate(inputDate: Date): string {
 
-  return new Intl.DateTimeFormat(undefined, options).format(inputDate);
+
+  return inputDate.toLocaleDateString();
 }
 
