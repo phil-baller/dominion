@@ -11,3 +11,15 @@ export function isBase64Image(imageData: string) {
   const base64Regex = /^data:image\/(png|jpe?g|gif|webp);base64,/;
   return base64Regex.test(imageData);
 }
+
+export function formatDate(inputDateString: string): string {
+  const inputDate = new Date(inputDateString);
+  const options: Intl.DateTimeFormatOptions = {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  };
+
+  return new Intl.DateTimeFormat(undefined, options).format(inputDate);
+}
+
