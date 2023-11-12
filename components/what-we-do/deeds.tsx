@@ -38,7 +38,15 @@ const Deeds = () => {
   if (isError) {
     return <h1>Something wrong happened!</h1>;
   } else if (isPending) {
-    return <WwwSkeleton />;
+    return (
+      <section className="padding bg-white text-[#111]">
+        <section className="max-w-7xl w-full mx-auto grid grid-cols-3 flex-col gap-10">
+          {Array.from({ length: 6 }).map((_, index) => (
+            <WwwSkeleton key={index} />
+          ))}
+        </section>
+      </section>
+    );
   }
 
   return (
