@@ -10,14 +10,9 @@ const Hero = () => {
         Let’s make a <br /> difference
       </h1>
       <p className="text-base">
-        Lorem ipsum dolor sit amet consectetur. Sollicitudin tempor sit commodo{" "}
+        We empower and equip the world to transform the poor and their{" "}
         <br className="hidden lg:block" />
-        vitae est purus enim placerat venenatis. Risus auctor facilisi posuere{" "}
-        <br className="hidden lg:block" />
-        adipiscing id nibh risus elementum mauris. In enim in id tempus dolor{" "}
-        <br className="hidden lg:block" />
-        id. Integer blandit lectus ultrices sit bibendum nibh pulvinar. A
-        commodo bibendum feugiat nibh nisi.
+        communities physically, mentally, morally, and spiritually.
       </p>
 
       <Donate />

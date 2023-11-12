@@ -66,17 +66,17 @@ export const whatWeDo = () => {
       {
         name: "Volunteer",
         icon: "/icons/volunteer.svg",
-        text: "Lorem ipsum dolor sit amet consectetur. Arcu in amet etiam pulvinar ullamcorper turpis tortor duis feugiat. Nibh mattis sapien enim a. Sed ac blandit cras in.",
+        text: "Join our community of dedicated volunteers committed to making a difference. Whether it’s lending a helping hand at events, contributing your skills, or participating in outreach programs, your time and effort contribute significantly to our mission ",
       },
       {
         name: "Donate",
         icon: "/icons/donate.svg",
-        text: "Lorem ipsum dolor sit amet consectetur. Arcu in amet etiam pulvinar ullamcorper turpis tortor duis feugiat. Nibh mattis sapien enim a. Sed ac blandit cras in.",
+        text: "Your generous donations fuel our initiatives and empower us to reach more individuals in need.Every contribution, no matter the size, plays a crucial role in creating positive change.Explore various donation options and see the tangible impact your support can have on the lives of those we serve",
       },
       {
         name: "Fundraise",
         icon: "/icons/fundraise.svg",
-        text: "Lorem ipsum dolor sit amet consectetur. Arcu in amet etiam pulvinar ullamcorper turpis tortor duis feugiat. Nibh mattis sapien enim a. Sed ac blandit cras in.",
+        text: " Becoming a champion for our cause by organising fundraising events, or campaigns. Engage your network, friends, and family to amplify our impact.Whether it’s a charity auction, or a virtual campaign, your fundraising efforts directly contribute to the success of our programs.",
       },
     ],
     []

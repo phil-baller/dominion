@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="h-96 lg:px-20 px-4 relative flex justify-center flex-col gap-5">
       <PageTextHero content="What we do" />
       <p className="lg:text-2xl text-base">
-        Put a smile on the faces of these childres
+        Put a smile on the faces of these children
       </p>
       <Donate />
     </section>
