@@ -5,6 +5,7 @@ import axios from "axios";
 import Image from "next/image";
 import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
+import Wwd from "./whatwedo";
 
 interface POSTDATA {
   title: string;
@@ -20,7 +21,8 @@ const CreatePost = ({ userId }: { userId: string | null }) => {
   });
 
   const [files, setFiles] = useState<File[] | undefined>([]);
-  const [loading, setLoading] = useState(false); // Added loading state
+
+  const [loading, setLoading] = useState(false);
   const { startUpload } = useUploadThing("media");
 
   const { title, desc, imageUrl } = postData;
@@ -29,7 +31,7 @@ const CreatePost = ({ userId }: { userId: string | null }) => {
     const uploadImage = async () => {
       try {
         if (files && files.length > 0) {
-          setLoading(true); // Set loading to true when uploading starts
+          setLoading(true);
 
           const imgRes = await startUpload(files);
 
@@ -43,7 +45,7 @@ const CreatePost = ({ userId }: { userId: string | null }) => {
       } catch (error: any) {
         console.log(error.message);
       } finally {
-        setLoading(false); // Set loading to false when upload is complete or encounters an error
+        setLoading(false);
       }
     };
 
@@ -172,27 +174,7 @@ const CreatePost = ({ userId }: { userId: string | null }) => {
         <h1 className="font-bold text-4xl">
           Upload <span className="font-bold">what we do</span> photos
         </h1>
-
-        <form className="flex flex-col  gap-10 w-full">
-          <p className="capitalize text-2xl">upload photo</p>
-          <label
-            htmlFor="file"
-            aria-disabled={loading}
-            className="disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <input type="file" name="file" id="file" className="hidden" />
-            <span className="cursor-pointer border py-3 px-10 lg:w-fit w-full text-primary capitalize">
-              {loading ? "   Uploading..." : "Select Photo"}
-            </span>
-          </label>
-
-          <button
-            className="bg-primary py-3 px-10 lg:w-fit w-full text-white capitalize"
-            disabled={loading} // Disable button when loading
-          >
-            {loading ? "Uploading..." : "Upload"}
-          </button>
-        </form>
+        <Wwd userId={userId!} />
       </section>
     </section>
   );

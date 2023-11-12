@@ -7,6 +7,10 @@ import Masonry from "react-masonry-css";
 import clsx from "clsx";
 import { XSquare } from "lucide-react";
 import Image from "next/image";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { WhatWedo } from "@prisma/client";
+import WwwSkeleton from "../skeletons/wwdSkeleton";
 
 interface projectsProp {
   isActive: boolean;
@@ -23,6 +27,20 @@ const Deeds = () => {
     600: 1,
   };
 
+  const { data, isPending, isError } = useQuery({
+    queryKey: ["wwd"],
+    queryFn: async () => {
+      const { data } = await axios.get("/api/wwd");
+      return data;
+    },
+  });
+
+  if (isError) {
+    return <h1>Something wrong happened!</h1>;
+  } else if (isPending) {
+    return <WwwSkeleton />;
+  }
+
   return (
     <section className="padding bg-white text-[#111]">
       <section className=" max-w-7xl w-full mx-auto flex flex-col gap-10">
@@ -31,14 +49,8 @@ const Deeds = () => {
           className="flex gap-4 overflow-hidden"
           breakpointCols={breakpointColumnsObj}
         >
-          {Array.from({ length: 6 }).map((_, index) => (
-            <Deed
-              key={index}
-              index={index}
-              // project={project}
-              // setIsActive={setisClcked}
-              // setSelected={setSelected}
-            />
+          {data.map((wwd: WhatWedo) => (
+            <Deed key={wwd.id} wwd={wwd} />
           ))}
         </Masonry>
       </section>
@@ -61,10 +73,15 @@ const Deeds = () => {
   );
 };
 
-const Deed = ({ index }: { index: number }) => {
+const Deed = ({ wwd }: { wwd: WhatWedo }) => {
   return (
-    <section className="h-80 w-full bg-slate-500 mb-4 flex items-center justify-center text-4xl font-bold text-white">
-      {index}
+    <section className="h-80 w-full bg-slate-500 mb-4 flex items-center justify-center text-4xl font-bold text-white relative">
+      <Image
+        className="object-cover"
+        src={wwd.imageUrl}
+        alt="dominion what we do"
+        fill
+      />
     </section>
   );
 };
