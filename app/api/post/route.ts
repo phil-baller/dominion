@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     //
 
 
-    const { imageUrl, desc, userId: id } = body;
+    const { imageUrl, desc, userId: id, title } = body;
 
     // console.log(body);
 
@@ -35,6 +35,7 @@ export async function POST(req: Request) {
         desc,
         imageUrl,
         userId: userId,
+        title
       },
     });
 

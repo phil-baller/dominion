@@ -33,7 +33,7 @@ const Blogs = () => {
       return (
         <section className="grid lg:grid-cols-3 grid-cols-1 gap-10 max-w-7xl w-full mx-auto">
           {postData.data.map((post: Post, index: number) => (
-            <PostComponent index={index} key={index} />
+            <PostComponent post={post} key={index} />
           ))}
         </section>
       );
