@@ -19,9 +19,8 @@ const Footer = () => {
         <section className="flex flex-1 flex-col gap-[26px]">
           <Logo />
           <p>
-            Lorem ipsum dolor sit amet consectetur. Sit amet dignissim fringilla
-            tortor id mattis enim egestas. Fames congue mi urna non senectus et.
-            In et tincidunt nibh sapien dui. Sem consequat sagittis.
+            We empower and equip the world to transform the poor and their
+            communities physically, mentally, morally, and spiritually
           </p>
         </section>
         <section className="flex flex-1 gap-10">
