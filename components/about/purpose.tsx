@@ -3,8 +3,8 @@ import React from "react";
 
 const Purpose = () => {
   return (
-    <section className="text-[#111] bg-white flex flex-col padding gapadding ">
-      <section className="max-w-7xl mx-auto w-full flex gapadding lg:flex-row flex-col-reverse">
+    <section className="text-[#111] bg-white flex flex-col gap-20 py-10 lg:py-40  ">
+      <section className="max-w-7xl mx-auto w-full flex gap-20  lg:flex-row flex-col-reverse">
         <section className="flex flex-col gap-4 flex-1">
           <p className="text-5xl">Our Purpose</p>
           <p className="flex flex-col gap-5">
@@ -29,7 +29,7 @@ const Purpose = () => {
           <section className="absolute w-full h-full z-0 bg-primary -left-10 -bottom-10" />
         </section>
       </section>
-      <section className="max-w-7xl mx-auto w-full flex gapadding lg:flex-row flex-col">
+      <section className="max-w-7xl mx-auto w-full flex gap-20 lg:flex-row flex-col">
         <section className="flex flex-col gap-4">
           <p className="lg:text-5xl text-xl font-bold">Our Purpose</p>
           <p>
