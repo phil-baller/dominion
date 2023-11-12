@@ -16,7 +16,7 @@ export async function GET(req: Request, { params }: { params: Params }) {
 
     const post = await db.post.findUnique({
       where: {
-        postId,
+        id: postId,
       },
     });
 
