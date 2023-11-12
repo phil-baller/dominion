@@ -3,7 +3,7 @@
 import { useUploadThing } from "@/utils/uploadthing";
 import axios from "axios";
 import Image from "next/image";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
 
 interface POSTDATA {
@@ -12,7 +12,7 @@ interface POSTDATA {
   imageUrl?: string;
 }
 
-const CreatePost = () => {
+const CreatePost = ({ userId }: { userId: string | null }) => {
   const [postData, setPostData] = useState<POSTDATA>({
     title: "",
     desc: "",
@@ -20,9 +20,35 @@ const CreatePost = () => {
   });
 
   const [files, setFiles] = useState<File[] | undefined>([]);
+  const [loading, setLoading] = useState(false); // Added loading state
   const { startUpload } = useUploadThing("media");
 
   const { title, desc, imageUrl } = postData;
+
+  useEffect(() => {
+    const uploadImage = async () => {
+      try {
+        if (files && files.length > 0) {
+          setLoading(true); // Set loading to true when uploading starts
+
+          const imgRes = await startUpload(files);
+
+          if (imgRes && imgRes[0].url) {
+            setPostData((prev) => ({
+              ...prev,
+              imageUrl: imgRes[0].url,
+            }));
+          }
+        }
+      } catch (error: any) {
+        console.log(error.message);
+      } finally {
+        setLoading(false); // Set loading to false when upload is complete or encounters an error
+      }
+    };
+
+    uploadImage();
+  }, [files, startUpload]);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -37,28 +63,38 @@ const CreatePost = () => {
 
   const handleChangeImage = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
-      // Explicitly specify the type for setFiles
       setFiles(Array.from(e.target.files) as File[]);
     }
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (files) {
-      try {
-        const imgRes = await startUpload(files);
 
-        if (imgRes && imgRes[0].url) {
-          setPostData((prev) => ({
-            ...prev,
-            imageUrl: imgRes[0].url,
-          }));
-        }
-      } catch (error: any) {
-        console.log(error.message);
+    if (!userId) {
+      return toast.error("Unautorized");
+    }
+
+    if (imageUrl === "" || !imageUrl) {
+      return toast.error("Image required");
+    }
+
+    try {
+      const { data } = await axios.post("/api/post", { ...postData, userId });
+
+      const requestBody = {
+        imageUrl: "",
+        title: "",
+        desc: "",
+      };
+
+      if (data) {
+        toast.success("Successfully uploaded!");
+        setPostData(requestBody);
+        setFiles(undefined);
       }
-    } else {
-      return toast.error("Image is required");
+    } catch (error: any) {
+      console.log(error);
+      return toast.error("Something went wrong!");
     }
   };
 
@@ -72,21 +108,23 @@ const CreatePost = () => {
               <p className="capitalize text-2xl">title</p>
               <input
                 type="text"
-                className="flex outline-none flex-1 p-2 border bg-white text-[#111]"
+                className="flex outline-none flex-1 p-2 border bg-white text-[#111] disabled:cursor-not-allowed disabled:opacity-50"
                 placeholder="Title"
                 name="title"
                 value={title}
                 onChange={handleChange}
+                disabled={loading} // Disable input when loading
               />
             </section>
             <section className="flex flex-col gap-4">
               <p className="capitalize text-2xl">description</p>
               <textarea
-                className="flex outline-none border w-full h-52 px-2 resize-none"
+                className="flex outline-none border w-full h-52 px-2 resize-none disabled:cursor-not-allowed disabled:opacity-50"
                 placeholder="Message"
                 name="desc"
                 value={desc}
                 onChange={handleChange}
+                disabled={loading} // Disable textarea when loading
               />
             </section>
           </section>
@@ -100,9 +138,13 @@ const CreatePost = () => {
                   id="file"
                   className="hidden"
                   onChange={handleChangeImage}
+                  disabled={loading}
                 />
-                <span className="cursor-pointer border py-3 px-10 lg:w-fit w-full text-primary capitalize">
-                  Select photo
+                <span
+                  className="cursor-pointer border py-3 px-10 lg:w-fit w-full text-primary capitalize disabled:cursor-pointer disabled:opacity-50"
+                  aria-disabled={loading}
+                >
+                  {loading ? "   Uploading..." : "Select Photo"}
                 </span>
               </label>
 
@@ -118,11 +160,14 @@ const CreatePost = () => {
             </section>
           </section>
         </section>
-        <button className="bg-primary py-3 px-10 lg:w-fit w-full text-white capitalize">
-          upload
+        <button
+          className="bg-primary py-3 px-10 lg:w-fit w-full text-white capitalize disabled:cursor-not-allowed disabled:opacity-50"
+          disabled={loading}
+        >
+          Upload
         </button>
       </form>
-
+      {/* CxWWxMCptncGqCfJ */}
       <section className="flex flex-col gap-10 w-full">
         <h1 className="font-bold text-4xl">
           Upload <span className="font-bold">what we do</span> photos
@@ -130,15 +175,22 @@ const CreatePost = () => {
 
         <form className="flex flex-col  gap-10 w-full">
           <p className="capitalize text-2xl">upload photo</p>
-          <label htmlFor="file">
+          <label
+            htmlFor="file"
+            aria-disabled={loading}
+            className="disabled:cursor-not-allowed disabled:opacity-50"
+          >
             <input type="file" name="file" id="file" className="hidden" />
             <span className="cursor-pointer border py-3 px-10 lg:w-fit w-full text-primary capitalize">
-              Select photo
+              {loading ? "   Uploading..." : "Select Photo"}
             </span>
           </label>
 
-          <button className="bg-primary py-3 px-10 lg:w-fit w-full text-white capitalize">
-            upload
+          <button
+            className="bg-primary py-3 px-10 lg:w-fit w-full text-white capitalize"
+            disabled={loading} // Disable button when loading
+          >
+            {loading ? "Uploading..." : "Upload"}
           </button>
         </form>
       </section>

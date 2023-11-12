@@ -1,7 +1,13 @@
 import Authform from "@/components/authform";
+import { initialProfile } from "@/lib/admin-profile";
+import { redirect } from "next/navigation";
 import React from "react";
 
-const Login = () => {
+const signUp = async () => {
+  const profile = await initialProfile();
+
+  if (profile) return redirect("/adfhadfadjhlfadhfad");
+
   return (
     <main className="h-full">
       <Authform />
@@ -9,4 +15,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default signUp;

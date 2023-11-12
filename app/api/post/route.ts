@@ -14,16 +14,6 @@ export async function POST(req: Request) {
       });
     //
 
-    const user = await db.user.findUnique({
-      where: {
-        userId: "sk_test_XG5tVr0LwHa3GOGZ1rK9K9YeW3UzKWNdIY2wdcYgAV",
-      },
-    });
-
-    if (!user)
-      return new NextResponse("You don't have access in creating a post!", {
-        status: 400,
-      });
 
     const { imageUrl, desc, userId: id } = body;
 
@@ -35,7 +25,7 @@ export async function POST(req: Request) {
       });
     }
 
-    if (user.userId !== id)
+    if (userId !== "user_2XSx0MpWyWpy5sWzwZqk9zxU9Fk")
       return new NextResponse("You don't have access in creating a post!", {
         status: 400,
       });
@@ -44,7 +34,7 @@ export async function POST(req: Request) {
       data: {
         desc,
         imageUrl,
-        userId: user.userId,
+        userId: userId,
       },
     });
 

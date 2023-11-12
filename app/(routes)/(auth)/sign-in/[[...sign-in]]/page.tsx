@@ -8,6 +8,8 @@ const Login = async () => {
 
   if (profile) return redirect("/adfhadfadjhlfadhfad");
 
+  console.log(profile);
+
   return (
     <main className="h-full">
       <Authform />
