@@ -5,16 +5,17 @@ import Donate from "../donatebtn";
 const Hero = () => {
   return (
     <section className="lg:h-screen py-32 flex flex-col gap-5 relative px-4 lg:px-20 h-fit">
-      <p className="text-primary text-2xl">Together</p>
-      <h1 className="text-[40px] font-black lg:text-[64px] lg:leading-[70px]">
-        Let’s make a <br /> difference
-      </h1>
-      <p className="text-base">
-        We empower and equip the world to transform the poor and their{" "}
-        <br className="hidden lg:block" />
-        communities physically, mentally, morally, and spiritually.
-      </p>
-
+      <section className="lg:h-[60%] h-full w-full flex flex-col justify-center gap-5">
+        <p className="text-primary text-2xl">Together</p>
+        <h1 className="text-[40px] font-black lg:text-[64px] lg:leading-[70px]">
+          Let’s make a <br /> difference
+        </h1>
+        <p className="text-base">
+          We empower and equip the world to transform the poor and their{" "}
+          <br className="hidden lg:block" />
+          communities physically, mentally, morally, and spiritually.
+        </p>
+      </section>
       <Donate />
 
       <section className="hidden bg-white/90 absolute  right-20 w-fit p-3 lg:flex gap-2 h-[112px] -bottom-14 ">
