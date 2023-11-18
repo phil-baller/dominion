@@ -63,12 +63,10 @@
   }
 
   .bg {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.7) 0%,
+    background: linear-gradient(rgba(0, 0, 0, 0.7) 0%,
         rgba(0, 0, 0, 0.588) 40%,
         rgba(0, 0, 0, 0.507) 70%,
-        rgba(0, 0, 0, 0.7) 100%
-      ),
+        rgba(0, 0, 0, 0.7) 100%),
       url(../public/background.jpg);
     background-size: cover;
     background-position: center;
@@ -76,12 +74,19 @@
     overflow: hidden;
   }
 
+  .truncate-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
   .bgtext {
-    background: linear-gradient(
-        0deg,
+    background: linear-gradient(0deg,
         rgba(0, 0, 0, 0.4) 0%,
-        rgba(0, 0, 0, 0.4) 100%
-      ),
+        rgba(0, 0, 0, 0.4) 100%),
       url(./../public/icons/bt.jpeg), lightgray 50% / cover no-repeat;
     background-size: cover;
     background-position: center;

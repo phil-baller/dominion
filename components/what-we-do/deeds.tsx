@@ -83,7 +83,7 @@ const Deeds = () => {
 
 const Deed = ({ wwd }: { wwd: WhatWedo }) => {
   return (
-    <section className="h-80 w-full bg-slate-500 mb-4 flex items-center justify-center text-4xl font-bold text-white relative">
+    <section className="h-fit min-h-[320px] w-full  bg-slate-500 mb-4 flex items-center justify-center text-4xl font-bold text-white relative">
       <Image
         className="object-cover"
         src={wwd.imageUrl}

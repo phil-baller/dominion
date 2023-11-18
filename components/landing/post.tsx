@@ -17,7 +17,7 @@ const Post = ({ post }: { post: Post }) => {
         <Link href={`/blog/${post.id}`} className="text-2xl">
           {post.title}
         </Link>
-        <p className="font-thin">{post.desc}</p>
+        <p className="font-thin truncate-text">{post.desc}</p>
         <section className="flex items-center justify-between mt-5">
           <p>By admin</p>
           <p>{new Date(post.createdAt).toLocaleDateString()}</p>
