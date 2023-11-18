@@ -14,7 +14,7 @@ const Post = ({ post }: { post: Post }) => {
         className="w-full"
       />
       <section className="flex flex-col gap-4 px-2 mt-3">
-        <Link href={`/blog/${post.id}`} className="text-2xl">
+        <Link href={`/blog/${post.id}`} className="text-2xl truncate-heading">
           {post.title}
         </Link>
         <p className="font-thin truncate-text">{post.desc}</p>

@@ -83,6 +83,15 @@
     max-width: 100%;
   }
 
+  .truncate-heading {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
   .bgtext {
     background: linear-gradient(0deg,
         rgba(0, 0, 0, 0.4) 0%,

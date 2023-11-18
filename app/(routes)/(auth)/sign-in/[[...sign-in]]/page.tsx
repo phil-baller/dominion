@@ -6,7 +6,7 @@ import React from "react";
 const Login = async () => {
   const profile = await initialProfile();
 
-  if (profile) return redirect("/adfhadfadjhlfadhfad");
+  if (profile) return redirect("/admin");
 
   console.log(profile);
 
