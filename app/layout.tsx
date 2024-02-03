@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { Toaster } from "@/providers/toast-provider";
 import ReactQuerry from "@/providers/react-querry";
-
 export const metadata: Metadata = {
   title: "Walking Dominion",
   description: "Software developer and visual",
@@ -18,7 +17,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
       <ReactQuerry>
         <html lang="en">
           <Toaster />
@@ -30,6 +28,5 @@ export default function RootLayout({
           </body>
         </html>
       </ReactQuerry>
-    </ClerkProvider>
   );
 }
