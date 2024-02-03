@@ -1,8 +1,21 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   images: {
-    domains: ["via.placeholder.com", "utfs.io"],
+    remotePatterns: [
+      {
+        hostname: "via.placeholder.com",
+        pathname: "**",
+        protocol: "https",
+      },
+      {
+        hostname: "utfs.io",
+        protocol: "https",
+        pathname: "**",
+      },
+    ],
   },
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
 };
 
 module.exports = nextConfig;

@@ -66,7 +66,7 @@ const Navbar = () => {
       <div
         className={`${
           isActive ? "right-0" : "-right-full"
-        }  bg-white w-full fixed transition-all text-[#111] top-0 h-screen py-12 px-4 z-0`}
+        }  bg-white w-full fixed transition-all text-[#111] top-0 h-screen p-4 z-0`}
         onClick={() => setIsActive(false)}
       >
         <Logo />
