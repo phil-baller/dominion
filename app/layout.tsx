@@ -1,4 +1,3 @@
-import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
@@ -17,16 +16,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-      <ReactQuerry>
-        <html lang="en">
-          <Toaster />
-          <body className={roboto.className}>
-            <main className="relative overflow-hidden">
-              <section className="bg h-screen fixed top-0 left-0 w-full text-[#111] -z-10" />
-              <section className="text-white z-50">{children}</section>
-            </main>
-          </body>
-        </html>
-      </ReactQuerry>
+    <ReactQuerry>
+      <html lang="en">
+        <Toaster />
+        <body className={roboto.className}>
+          <main className="relative overflow-hidden">
+            <section className="bg h-screen fixed top-0 left-0 w-full text-[#111] -z-10" />
+            <section className="text-white z-50">{children}</section>
+          </main>
+        </body>
+      </html>
+    </ReactQuerry>
   );
 }
