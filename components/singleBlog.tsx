@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
 import PostSkeleton from "./skeletons/postSkeleton";
-import { Post } from "@prisma/client";
+// import { Post } from "@prisma/client";
 import Image from "next/image";
 
 const SingleBlog = ({ blogId }: { blogId: string }) => {
@@ -17,7 +17,7 @@ const SingleBlog = ({ blogId }: { blogId: string }) => {
     },
   });
 
-  const post: Post = data;
+  const post = data;
 
   if (isLoading) {
     return <PostSkeleton />;

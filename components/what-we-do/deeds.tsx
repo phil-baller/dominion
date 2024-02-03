@@ -1,15 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-// import Project from "./Project";
+import React, { useState } from "react";
 import Masonry from "react-masonry-css";
-// import { Portfolio } from "@prisma/client";
 import clsx from "clsx";
 import { XSquare } from "lucide-react";
 import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { WhatWedo } from "@prisma/client";
 import WwwSkeleton from "../skeletons/wwdSkeleton";
 
 interface projectsProp {
@@ -57,7 +54,7 @@ const Deeds = () => {
           className="flex gap-4 overflow-hidden"
           breakpointCols={breakpointColumnsObj}
         >
-          {data.map((wwd: WhatWedo) => (
+          {data.map((wwd: any) => (
             <Deed key={wwd.id} wwd={wwd} />
           ))}
         </Masonry>
@@ -81,7 +78,7 @@ const Deeds = () => {
   );
 };
 
-const Deed = ({ wwd }: { wwd: WhatWedo }) => {
+const Deed = ({ wwd }: { wwd: any }) => {
   return (
     <section className="h-fit min-h-[320px] w-full  bg-slate-500 mb-4 flex items-center justify-center text-4xl font-bold text-white relative">
       <Image

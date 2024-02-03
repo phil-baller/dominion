@@ -2,7 +2,6 @@
 
 import { PostData } from "@/lib/reactquerry";
 import PostComponent from "./landing/post";
-import { Post } from "@prisma/client";
 import PostSkeleton from "./skeletons/postSkeleton";
 
 export const TobeSeen = () => {
@@ -24,7 +23,7 @@ export const TobeSeen = () => {
   } else {
     return (
       <section className="grid lg:grid-cols-3 grid-cols-1 gap-10 max-w-7xl w-full mx-auto">
-        {posts.data.map((post: Post) => (
+        {posts.data.map((post: any) => (
           <PostComponent post={post} key={post.id} />
         ))}
       </section>

@@ -1,7 +1,7 @@
 "use client";
 
 import { navbarRoutes } from "@/constants";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "./logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,29 +13,32 @@ const Navbar = () => {
   const routes = navbarRoutes();
 
   const [isActive, setIsActive] = useState(false);
-  const [bgColor, setBgColor] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  // console.log(pathname);
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setScrolled(isScrolled);
+    };
 
-  function changeNavBackgroundColor() {
-    if (window.scrollY >= 70) {
-      setBgColor(true);
-    } else {
-      setBgColor(false);
+    // Add event listener for scroll events
+    window.addEventListener("scroll", handleScroll);
+
+    if (window.scrollY > 0) {
+      window.addEventListener("scroll", handleScroll);
     }
-  }
-
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", changeNavBackgroundColor);
-  }
+    // Clean up the event listener when component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Empty dependency array ensures this effect runs only once
 
   return (
     <header className="h-20 flex w-full items-center lg:px-20 px-4 justify-between fixed left-0 top-0 z-[999]">
       <div
-        className={cn(
-          bgColor && " bg-[rgba(17, 17, 17, 1)]/50 backdrop-blur-lg",
-          "absolute inset-0 duration-300 z-[-1]"
-        )}
+        className={cn("absolute inset-0 duration-300 z-[-1]", {
+          "bg-[#111] backdrop-blur-lg": scrolled,
+        })}
       />
       <Logo />
 
