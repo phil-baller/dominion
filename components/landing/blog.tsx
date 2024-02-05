@@ -8,7 +8,7 @@ import { getBlogs } from "@/constants";
 const Blog = async ({ isHeader }: { isHeader?: boolean }) => {
   const data = (await getBlogs()) as blogType[];
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <section className="bg-white text-[#111] padding flex gap-10 flex-col">

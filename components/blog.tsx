@@ -6,7 +6,7 @@ import { blogType } from "@/types";
 const Blog = async () => {
   const data = (await getBlogs()) as blogType[];
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <section className="padding bg-white text-[#111]">
