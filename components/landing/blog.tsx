@@ -1,12 +1,19 @@
 import React from "react";
 import Header from "../header";
 import { TobeSeen } from "../tobeseen";
+import { client } from "@/lib/sanity";
+import { blogType } from "@/types";
+import { getBlogs } from "@/constants";
 
-const Blog = ({ isHeader }: { isHeader?: boolean }) => {
+const Blog = async ({ isHeader }: { isHeader?: boolean }) => {
+  const data = (await getBlogs()) as blogType[];
+
+  console.log(data);
+
   return (
     <section className="bg-white text-[#111] padding flex gap-10 flex-col">
       {isHeader && <Header content="What we've done" />}
-      <TobeSeen />
+      <TobeSeen blogs={data} />
     </section>
   );
 };

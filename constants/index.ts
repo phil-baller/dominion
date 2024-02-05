@@ -1,3 +1,4 @@
+import { client } from "@/lib/sanity";
 import { useMemo } from "react";
 
 export const navbarRoutes = () => {
@@ -198,3 +199,18 @@ export const contactForm = () => {
 
   return what;
 };
+
+export async function getBlogs(slug?: string) {
+  if (slug) {
+    const query = `*[_type == "blog" && slug.current == "${slug}"][0]`;
+
+    const data = await client.fetch(query);
+
+    return data;
+  }
+  const query = `*[_type == "blog"]`;
+
+  const data = await client.fetch(query);
+
+  return data;
+}

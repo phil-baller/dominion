@@ -13,6 +13,11 @@ const nextConfig = {
         protocol: "https",
         pathname: "**",
       },
+      {
+        hostname: "cdn.sanity.io",
+        protocol: "https",
+        pathname: "**",
+      },
     ],
   },
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],

@@ -1,12 +1,17 @@
 import Blog from "@/components/blog";
 import Hero from "@/components/blog/hero";
 import SingleBlog from "@/components/singleBlog";
-import { Params } from "@/types";
+import { getBlogs } from "@/constants";
+import { Params, blogType } from "@/types";
 import { Search } from "lucide-react";
 import React from "react";
 
-const BlogId = ({ params }: { params: Params }) => {
+const BlogId = async ({ params }: { params: Params }) => {
   const { blogId } = params;
+
+  const blog = (await getBlogs(blogId)) as blogType;
+
+  console.log(blog);
 
   return (
     <main className="h-fit">
@@ -14,7 +19,7 @@ const BlogId = ({ params }: { params: Params }) => {
       <section className="padding bg-white text-[#111]">
         <section className="flex gap-10 max-w-2xl w-full mx-auto ">
           <section className="flex-[2]">
-            <SingleBlog blogId={blogId} />
+            <SingleBlog blog={blog} />
           </section>
           <section className="lg:flex-1 hidden">
             <section className="px-2 w-full mx-auto border flex items-center gap-2 ">

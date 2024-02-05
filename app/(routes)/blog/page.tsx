@@ -6,7 +6,6 @@ const Blog = () => {
   return (
     <main className="h-fit">
       <Hero />
-
       <Blogs />
     </main>
   );

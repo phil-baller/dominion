@@ -9,7 +9,7 @@ import Video from "@/components/landing/video";
 import WhatweDo from "@/components/landing/what-we-do";
 import React from "react";
 
-const LandingPage = () => {
+const LandingPage = async () => {
   return (
     <main className="flex flex-col ">
       <Hero />

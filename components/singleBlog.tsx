@@ -3,39 +3,47 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
-import PostSkeleton from "./skeletons/postSkeleton";
+// import PostSkeleton from "./skeletons/postSkeleton";
 // import { Post } from "@prisma/client";
 import Image from "next/image";
+import { blogType } from "@/types";
+import { PortableText } from "@portabletext/react";
+import { urlFor } from "@/lib/sanityImageUrl";
 
-const SingleBlog = ({ blogId }: { blogId: string }) => {
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["single"],
-    queryFn: async () => {
-      const { data } = await axios.get(`/api/blog/${blogId}`);
+const SingleBlog = ({ blog }: { blog: blogType }) => {
+  // console.log(blog);
 
-      return data;
+  const PortableTextComponent = {
+    types: {
+      image: ({ value }: { value: any }) => {
+        const imageUrl = urlFor(value).url();
+
+        return (
+          <Image src={imageUrl} alt="just text" width={600} height={500} />
+        );
+      },
     },
-  });
-
-  const post = data;
-
-  if (isLoading) {
-    return <PostSkeleton />;
-  }
-
-  if (isError) {
-    return <h1>Something went wrong</h1>;
-  }
+  };
 
   return (
     <>
-      <Image alt={post.title} src={post.imageUrl!} width={600} height={500} />
+      <Image
+        alt={blog.title}
+        src={urlFor(blog.previewImage).url()}
+        width={600}
+        height={500}
+      />
       <section className="flex flex-col gap-4 px-2 mt-3">
-        <p className="text-2xl">{post.title}</p>
-        <p className="font-thin">{post.desc}</p>
+        <p className="text-2xl">{blog?.title}</p>
+        <div className="prose">
+          <PortableText
+            value={blog.content}
+            components={PortableTextComponent}
+          />
+        </div>
         <section className="flex items-center justify-between mt-5">
           <p>By admin</p>
-          <p>{new Date(post.createdAt).toLocaleDateString()}</p>
+          <p>{new Date(blog?.createdAt).toLocaleDateString()}</p>
         </section>
       </section>
     </>
