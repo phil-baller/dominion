@@ -17,3 +17,13 @@ export type blogType = {
   createdAt: string;
   _id: string;
 };
+
+export type imageType = {
+  image: {
+    asset: {
+      _ref: string;
+    };
+  };
+  description: string;
+  _id: string;
+};

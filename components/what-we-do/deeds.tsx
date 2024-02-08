@@ -5,46 +5,22 @@ import Masonry from "react-masonry-css";
 import clsx from "clsx";
 import { XSquare } from "lucide-react";
 import Image from "next/image";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import WwwSkeleton from "../skeletons/wwdSkeleton";
+import { imageType } from "@/types";
+import { urlFor } from "@/lib/sanityImageUrl";
 
 interface projectsProp {
   isActive: boolean;
   //   portfolio: Portfolio[];
 }
 
-const Deeds = () => {
+const Deeds = ({ pictures }: { pictures: imageType[] }) => {
   const [isClcked, setisClcked] = useState<boolean>(false);
-  //   const [selected, setSelected] = useState<Portfolio>();
   const breakpointColumnsObj = {
     default: 3,
     1100: 3,
     700: 2,
     600: 1,
   };
-
-  const { data, isPending, isError } = useQuery({
-    queryKey: ["wwd"],
-    queryFn: async () => {
-      const { data } = await axios.get("/api/wwd");
-      return data;
-    },
-  });
-
-  if (isError) {
-    return <h1>Something wrong happened!</h1>;
-  } else if (isPending) {
-    return (
-      <section className="padding bg-white text-[#111]">
-        <section className="max-w-7xl w-full mx-auto grid grid-cols-3 flex-col gap-10">
-          {Array.from({ length: 6 }).map((_, index) => (
-            <WwwSkeleton key={index} />
-          ))}
-        </section>
-      </section>
-    );
-  }
 
   return (
     <section className="padding bg-white text-[#111]">
@@ -54,8 +30,8 @@ const Deeds = () => {
           className="flex gap-4 overflow-hidden"
           breakpointCols={breakpointColumnsObj}
         >
-          {data.map((wwd: any) => (
-            <Deed key={wwd.id} wwd={wwd} />
+          {pictures.map((picture) => (
+            <Deed key={picture._id} picture={picture} />
           ))}
         </Masonry>
       </section>
@@ -78,12 +54,12 @@ const Deeds = () => {
   );
 };
 
-const Deed = ({ wwd }: { wwd: any }) => {
+const Deed = ({ picture }: { picture: imageType }) => {
   return (
     <section className="h-fit min-h-[320px] w-full  bg-slate-500 mb-4 flex items-center justify-center text-4xl font-bold text-white relative">
       <Image
         className="object-cover"
-        src={wwd.imageUrl}
+        src={urlFor(picture.image).url()}
         alt="dominion what we do"
         fill
       />

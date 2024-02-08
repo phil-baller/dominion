@@ -214,3 +214,10 @@ export async function getBlogs(slug?: string) {
 
   return data;
 }
+export async function getPictures() {
+  const query = `*[_type == "pictures"]`;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
