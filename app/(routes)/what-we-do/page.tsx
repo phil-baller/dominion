@@ -6,7 +6,7 @@ import React from "react";
 const WhatWeDo = async () => {
   const pictures = await getPictures();
 
-  console.log(pictures);
+  // console.log(pictures);
 
   return (
     <main className="h-fit">
