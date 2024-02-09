@@ -11,7 +11,7 @@ const BlogId = async ({ params }: { params: Params }) => {
 
   const blog = (await getBlogs(blogId)) as blogType;
 
-  // console.log(blog);
+  console.log(blog.releaseDate);
 
   return (
     <main className="h-fit">

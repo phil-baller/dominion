@@ -14,7 +14,8 @@ export type blogType = {
   slug: {
     current: string;
   };
-  createdAt: string;
+  _createdAt: string;
+  releaseDate: string;
   _id: string;
 };
 

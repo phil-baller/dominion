@@ -7,6 +7,8 @@ import React from "react";
 const Post = ({ post }: { post: blogType }) => {
   // console.log(post);
 
+  const date = post._createdAt.split("T")[0];
+
   return (
     <section className="flex flex-col">
       <Image
@@ -26,7 +28,7 @@ const Post = ({ post }: { post: blogType }) => {
         <p className="font-thin truncate-text">{post.overview}</p>
         <section className="flex items-center justify-between mt-5">
           <p>By admin</p>
-          <p>{new Date(post.createdAt).toLocaleDateString()}</p>
+          <p>{post.releaseDate ? post.releaseDate : date}</p>
         </section>
       </section>
     </section>

@@ -24,6 +24,11 @@ const SingleBlog = ({ blog }: { blog: blogType }) => {
       },
     },
   };
+  // console.log(blog);
+
+  const date = blog._createdAt.split("T")[0];
+
+  // console.log(date);
 
   return (
     <>
@@ -43,7 +48,7 @@ const SingleBlog = ({ blog }: { blog: blogType }) => {
         </div>
         <section className="flex items-center justify-between mt-5">
           <p>By admin</p>
-          <p>{new Date(blog?.createdAt).toLocaleDateString()}</p>
+          <p>{blog.releaseDate ? blog.releaseDate : date}</p>
         </section>
       </section>
     </>
