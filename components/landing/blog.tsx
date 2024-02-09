@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../header";
 import { TobeSeen } from "../tobeseen";
-import { client } from "@/lib/sanity";
 import { blogType } from "@/types";
 import { getBlogs } from "@/constants";
 

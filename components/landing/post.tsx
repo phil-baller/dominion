@@ -5,6 +5,8 @@ import Link from "next/link";
 import React from "react";
 
 const Post = ({ post }: { post: blogType }) => {
+  // console.log(post);
+
   return (
     <section className="flex flex-col">
       <Image
