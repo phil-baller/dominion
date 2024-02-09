@@ -6,4 +6,4 @@ const config = {
   apiVersion: "2024-02-04",
 };
 
-export const client = createClient({ ...config, useCdn: true });
+export const client = createClient({ ...config, useCdn: false });
