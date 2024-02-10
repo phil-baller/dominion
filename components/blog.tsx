@@ -1,7 +1,7 @@
 import React from "react";
 import { TobeSeen } from "./tobeseen";
-import { getBlogs } from "@/constants";
-import { blogType } from "@/types";
+// import { getBlogs } from "@/constants";
+// import { blogType } from "@/types";
 
 const Blog = async () => {
   return (
