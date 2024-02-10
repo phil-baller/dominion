@@ -6,7 +6,7 @@ export async function GET(
   { params }: { params: { blogId: string } }
 ) {
   try {
-    console.log(params.blogId);
+    // console.log(params.blogId);
 
     const data = await getCashedSingleBlog(params.blogId);
 
