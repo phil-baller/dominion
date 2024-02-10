@@ -9,9 +9,7 @@ import React from "react";
 const BlogId = async ({ params }: { params: Params }) => {
   const { blogId } = params;
 
-  const blog = (await getBlogs(blogId)) as blogType;
-
-  // console.log(blog.releaseDate);
+  // const blog = (await getBlogs(blogId)) as blogType;
 
   return (
     <main className="h-fit">
@@ -19,7 +17,7 @@ const BlogId = async ({ params }: { params: Params }) => {
       <section className="padding bg-white text-[#111]">
         <section className="flex gap-10 max-w-2xl w-full mx-auto ">
           <section className="flex-[2]">
-            <SingleBlog blog={blog} />
+            <SingleBlog blogId={blogId} />
           </section>
           <section className="lg:flex-1 hidden">
             <section className="px-2 w-full mx-auto border flex items-center gap-2 ">

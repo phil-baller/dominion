@@ -1,4 +1,6 @@
 import { client } from "@/lib/sanity";
+import { blogType } from "@/types";
+import { unstable_cache } from "next/cache";
 import { useMemo } from "react";
 
 export const navbarRoutes = () => {
@@ -214,10 +216,51 @@ export async function getBlogs(slug?: string) {
 
   return data;
 }
-export async function getPictures() {
+export async function getSlingle(slug: string) {
+  if (slug) {
+    const query = `*[_type == "blog" && slug.current == "${slug}"][0]`;
+
+    const data = await client.fetch(query);
+
+    return data;
+  }
+  return "nothing";
+}
+
+export const getPictures = async () => {
   const query = `*[_type == "pictures"]`;
 
   const data = await client.fetch(query);
 
   return data;
+};
+
+export const getCashedBlogs = unstable_cache(
+  async () => await getBlogs(),
+  [""],
+  {
+    revalidate: 1,
+  }
+);
+
+export const getCashedSingleBlog = unstable_cache(
+  async (id) => await getSlingle(id),
+  [""],
+  {
+    revalidate: 1,
+  }
+);
+
+export async function getNewBlogs() {
+  try {
+    const data = await fetch("/api/blogs", { next: { revalidate: 1 } });
+
+    const newData = await data.json();
+
+    if (newData) {
+      return newData as blogType[];
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }

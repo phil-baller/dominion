@@ -9,9 +9,29 @@ import Image from "next/image";
 import { blogType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/lib/sanityImageUrl";
+import PostSkeleton from "./skeletons/postSkeleton";
 
-const SingleBlog = ({ blog }: { blog: blogType }) => {
+const SingleBlog = ({ blogId }: { blogId: string }) => {
   // console.log(blog);
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["single"],
+    queryFn: async () => {
+      const { data } = await axios.get(`/api/blogs/${blogId}`);
+
+      return data;
+    },
+  });
+
+  const blog: blogType = data;
+
+  if (isLoading) {
+    return <PostSkeleton />;
+  }
+
+  if (isError) {
+    return <h1>Something went wrong</h1>;
+  }
 
   const PortableTextComponent = {
     types: {
@@ -19,7 +39,13 @@ const SingleBlog = ({ blog }: { blog: blogType }) => {
         const imageUrl = urlFor(value).url();
 
         return (
-          <Image src={imageUrl} alt="just text" width={600} height={500} />
+          <Image
+            src={imageUrl}
+            alt="just text"
+            width={600}
+            height={500}
+            className="rounded-[8px]"
+          />
         );
       },
     },
@@ -37,6 +63,7 @@ const SingleBlog = ({ blog }: { blog: blogType }) => {
         src={urlFor(blog.previewImage).url()}
         width={600}
         height={500}
+        className="rounded-[8px]"
       />
       <section className="flex flex-col gap-4 px-2 mt-3">
         <p className="text-2xl">{blog?.title}</p>

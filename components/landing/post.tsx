@@ -5,8 +5,6 @@ import Link from "next/link";
 import React from "react";
 
 const Post = ({ post }: { post: blogType }) => {
-  // console.log(post);
-
   const date = post._createdAt.split("T")[0];
 
   return (
