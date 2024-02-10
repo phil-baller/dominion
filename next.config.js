@@ -20,18 +20,20 @@ const nextConfig = {
       },
     ],
   },
+
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
-  headers: () => [
-    {
-      source: "/:path*",
-      headers: [
-        {
-          key: "Cache-Control",
-          value: "no-store",
-        },
-      ],
-    },
-  ],
+
+  // headers: () => [
+  //   {
+  //     source: "/:path*",
+  //     headers: [
+  //       {
+  //         key: "Cache-Control",
+  //         value: "no-store",
+  //       },
+  //     ],
+  //   },
+  // ],
 };
 
 module.exports = nextConfig;
