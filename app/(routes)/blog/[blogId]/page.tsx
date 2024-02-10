@@ -1,10 +1,15 @@
 import Blog from "@/components/blog";
 import Hero from "@/components/blog/hero";
 import SingleBlog from "@/components/singleBlog";
-import { getBlogs } from "@/constants";
-import { Params, blogType } from "@/types";
+import { Params } from "@/types";
 import { Search } from "lucide-react";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "See how we're empowering the community",
+};
 
 const BlogId = async ({ params }: { params: Params }) => {
   const { blogId } = params;

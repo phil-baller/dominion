@@ -4,8 +4,12 @@ import { Roboto } from "next/font/google";
 import { Toaster } from "@/providers/toast-provider";
 import ReactQuerry from "@/providers/react-querry";
 export const metadata: Metadata = {
-  title: "Walking Dominion",
-  description: "Software developer and visual",
+  title: {
+    default: "Walking in Dominion",
+    template: "%s - Walking in Dominion",
+  },
+  description:
+    "We Walking in Dominion empower and equip the world to transform the poor and their communities physically, mentally, morally, and spiritually.",
 };
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["500"] });
