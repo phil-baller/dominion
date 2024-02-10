@@ -22,7 +22,7 @@ export const TobeSeen = ({ isReduced }: { isReduced?: boolean }) => {
   }
 
   if (isReduced) {
-    const newPosts = posts.data?.slice(0, 5);
+    const newPosts = posts.data?.slice(0, 6);
     return (
       <section className="grid lg:grid-cols-3 grid-cols-1 gap-10 max-w-7xl w-full mx-auto">
         {newPosts?.map((post) => (
