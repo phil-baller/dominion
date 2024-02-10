@@ -4,7 +4,7 @@ import { PostData } from "@/lib/reactquerry";
 import PostComponent from "./landing/post";
 import PostSkeleton from "./skeletons/postSkeleton";
 
-export const TobeSeen = () => {
+export const TobeSeen = ({ isReduced }: { isReduced?: boolean }) => {
   const posts = PostData();
 
   if (posts.isPending) {
@@ -19,13 +19,24 @@ export const TobeSeen = () => {
     return <h1>something went wrong</h1>;
   } else if (posts.data?.length === 0) {
     return <div> No Post Yet</div>;
-  } else {
+  }
+
+  if (isReduced) {
+    const newPosts = posts.data?.slice(0, 5);
     return (
       <section className="grid lg:grid-cols-3 grid-cols-1 gap-10 max-w-7xl w-full mx-auto">
-        {posts.data?.map((post) => (
+        {newPosts?.map((post) => (
           <PostComponent post={post} key={post._id} />
         ))}
       </section>
     );
   }
+
+  return (
+    <section className="grid lg:grid-cols-3 grid-cols-1 gap-10 max-w-7xl w-full mx-auto">
+      {posts.data?.map((post) => (
+        <PostComponent post={post} key={post._id} />
+      ))}
+    </section>
+  );
 };

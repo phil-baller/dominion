@@ -12,7 +12,7 @@ const Blog = async ({ isHeader }: { isHeader?: boolean }) => {
   return (
     <section className="bg-white text-[#111] padding flex gap-10 flex-col">
       {isHeader && <Header content="What we've done" />}
-      <TobeSeen />
+      <TobeSeen isReduced />
     </section>
   );
 };
