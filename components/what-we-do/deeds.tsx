@@ -56,7 +56,7 @@ const Deeds = ({ pictures }: { pictures: imageType[] }) => {
 
 const Deed = ({ picture }: { picture: imageType }) => {
   return (
-    <section className="h-fit min-h-[320px] w-full  bg-slate-500 mb-4 flex items-center justify-center text-4xl font-bold text-white relative">
+    <section className="h-fit min-h-[320px] w-full  bg-muted-foreground/50 mb-4 flex items-center justify-center text-4xl font-bold text-white relative">
       <Image
         className="object-cover"
         src={urlFor(picture.image).url()}

@@ -14,7 +14,7 @@ const Post = ({ post }: { post: blogType }) => {
         src={urlFor(post.previewImage).url()}
         width={600}
         height={500}
-        className="rounded-[8px]"
+        className="rounded-[8px] w-[600px] max-h-[300px] object-cover"
       />
       <section className="flex flex-col gap-4 px-2 mt-3">
         <Link

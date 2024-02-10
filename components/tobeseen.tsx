@@ -2,7 +2,6 @@
 
 import { PostData } from "@/lib/reactquerry";
 import PostComponent from "./landing/post";
-import { blogType } from "@/types";
 import PostSkeleton from "./skeletons/postSkeleton";
 
 export const TobeSeen = () => {
