@@ -95,9 +95,6 @@ const Family = () => {
     "https://via.placeholder.com/600/FF5733/000000?text=1",
     "https://via.placeholder.com/600/FFC300/000000?text=2",
     "https://via.placeholder.com/600/DAF7A6/000000?text=3",
-    "https://via.placeholder.com/600/4CAF50/000000?text=4",
-    "https://via.placeholder.com/600/2196F3/000000?text=5",
-    "https://via.placeholder.com/600/673AB7/000000?text=6",
   ];
 
   return (
