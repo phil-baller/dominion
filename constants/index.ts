@@ -39,7 +39,7 @@ export const socialsIcons = () => {
       {
         name: "facebook",
         icon: "/icons/facebook.svg",
-        path: "#",
+        path: "https://www.facebook.com/Dominioncharityorganisation",
       },
       {
         name: "Twitter",

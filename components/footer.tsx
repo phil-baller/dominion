@@ -48,7 +48,7 @@ const Footer = () => {
               Socials
             </p>
             {socials.map((social) => (
-              <Link href={social.path} key={social.name}>
+              <Link href={social.path} key={social.name} target="_blank">
                 <Image
                   src={social.icon}
                   width={24}
