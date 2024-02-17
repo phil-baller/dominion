@@ -10,12 +10,10 @@ export const metadata: Metadata = {
 };
 
 const WhatWeDo = async () => {
-  const pictures = await getPictures();
-
   return (
     <main className="h-fit">
       <Hero />
-      <Deeds pictures={pictures} />
+      <Deeds />
     </main>
   );
 };

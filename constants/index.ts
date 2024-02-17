@@ -1,5 +1,5 @@
 import { client } from "@/lib/sanity";
-import { blogType } from "@/types";
+import { blogType, imageType } from "@/types";
 import { unstable_cache } from "next/cache";
 import { useMemo } from "react";
 
@@ -243,6 +243,14 @@ export const getCashedBlogs = unstable_cache(
   }
 );
 
+export const getCashedPictures = unstable_cache(
+  async () => await getPictures(),
+  [""],
+  {
+    revalidate: 1,
+  }
+);
+
 export const getCashedSingleBlog = unstable_cache(
   async (id) => await getSlingle(id),
   [""],
@@ -264,3 +272,21 @@ export async function getNewBlogs() {
     console.log(error);
   }
 }
+
+export async function getNewPictures() {
+  try {
+    const data = await fetch("/api/images", { next: { revalidate: 1 } });
+
+    const newData = await data.json();
+
+    if (newData) {
+      return newData as imageType[];
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const skeletonPicturesHeight = [
+  200, 150, 499, 209, 288, 199, 120, 209, 100, 300,
+];
