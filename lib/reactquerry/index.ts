@@ -7,7 +7,7 @@ export const PostData = () =>
     queryFn: getNewBlogs,
   });
 
-export const getPictures = () =>
+export const PicturesData = () =>
   useQuery({
     queryKey: ["pictures"],
     queryFn: getNewPictures,

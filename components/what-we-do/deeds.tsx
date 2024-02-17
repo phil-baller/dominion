@@ -7,13 +7,13 @@ import { XSquare } from "lucide-react";
 import Image from "next/image";
 import { imageType } from "@/types";
 import { urlFor } from "@/lib/sanityImageUrl";
-import { getPictures } from "@/lib/reactquerry";
+import { PicturesData } from "@/lib/reactquerry";
 import { skeletonPicturesHeight } from "@/constants";
 import { Skeleton } from "../ui/skeleton";
 import useClickOutside from "@/lib/use-click-outside";
 
 const Deeds = () => {
-  const pictures = getPictures();
+  const pictures = PicturesData();
 
   const breakpointColumnsObj = {
     default: 3,
