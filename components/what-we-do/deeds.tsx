@@ -12,13 +12,8 @@ import { skeletonPicturesHeight } from "@/constants";
 import { Skeleton } from "../ui/skeleton";
 import useClickOutside from "@/lib/use-click-outside";
 
-interface projectsProp {
-  isActive: boolean;
-  //   portfolio: Portfolio[];
-}
-
 const Deeds = () => {
-  const { data, isPending, error } = getPictures();
+  const pictures = getPictures();
 
   const breakpointColumnsObj = {
     default: 3,
@@ -32,7 +27,7 @@ const Deeds = () => {
       <section className=" max-w-7xl w-full mx-auto flex flex-col gap-10">
         <p className="text-2xl">Archives of Deeds</p>
 
-        {isPending ? (
+        {pictures.isPending ? (
           <Masonry
             className="flex gap-4 overflow-hidden"
             breakpointCols={breakpointColumnsObj}
@@ -52,7 +47,7 @@ const Deeds = () => {
             className="flex gap-4 overflow-hidden"
             breakpointCols={breakpointColumnsObj}
           >
-            {data?.map((picture) => (
+            {pictures.data?.map((picture) => (
               <Deed key={picture._id} picture={picture} />
             ))}
           </Masonry>
