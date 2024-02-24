@@ -3,8 +3,14 @@
 import { PostData } from "@/lib/reactquerry";
 import PostComponent from "./landing/post";
 import PostSkeleton from "./skeletons/postSkeleton";
+import { revalidatePath } from "next/cache";
+import { useEffect } from "react";
 
 export const TobeSeen = ({ isReduced }: { isReduced?: boolean }) => {
+  useEffect(() => {
+    revalidatePath("/");
+  }, []);
+
   const posts = PostData();
 
   if (posts.isPending) {
