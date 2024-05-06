@@ -140,7 +140,7 @@ export const partners = () => {
       {
         name: "Blessing Solidarity Home Foundation (BSHF)",
         location: "Bamenda, NW Region Cameroon, Africa",
-        contact: ["Mrs. Ahone Florence", "Tel: +237 677 029 767 "],
+        contact: ["Mrs. Awah Nicoline", "Tel: +237 676 283 367 "],
       },
       {
         name: "Rainbow Orphanage",
@@ -155,18 +155,18 @@ export const partners = () => {
         name: "St. Therese Orphanage",
         location: "Yaounde, Center Region Cameroon, Africa",
         contact: [
-          "Mrs. Ahone Florence",
-          "Tel: +237 677 029 767 ",
-          " Email: ahoneflorence1@gmail.com",
+          "Mrs. Martha Teche Abei",
+          "Tel: +237 677 982 578 ",
+          " Email: techemartha66@gmail.com",
         ],
       },
       {
         name: "Shaping Destiny Orphanage",
         location: "Yaounde, Center Region Cameroon, Africa",
         contact: [
-          "Mrs. Ahone Florence",
-          "Tel: +237 677 029 767 ",
-          " Email: ahoneflorence1@gmail.com",
+          "Mrs. Martha Teche Abei",
+          "Tel: +237 677 982 578 ",
+          " Email: techemartha66@gmail.com",
         ],
       },
     ],
