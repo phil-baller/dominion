@@ -11,7 +11,9 @@ export async function GET(req: Request) {
     const content = blogs as blogType[];
 
     return NextResponse.json(content);
-  } catch (error) {
-    console.log("something went wrong");
+  } catch (error: any) {
+    console.log(error.message);
+
+    return NextResponse.json("internal server error", { status: 500 });
   }
 }
