@@ -165,7 +165,7 @@ export const partners = () => {
         location: "Yaounde, Center Region Cameroon, Africa",
         contact: [
           "Mrs. Martha Teche Abei",
-          "Tel: +237 677 982 578 ",
+          "Tel: +237 677 982 578s",
           " Email: techemartha66@gmail.com",
         ],
       },
