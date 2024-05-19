@@ -16,7 +16,6 @@ const LandingPage = async () => {
       <WhatweDo />
       <BgText />
       <Mission />
-      <Video />
       <Family />
       <Impact />
       <Blog isHeader />
