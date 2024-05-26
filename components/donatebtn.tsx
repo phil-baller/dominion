@@ -1,10 +1,10 @@
 import React from "react";
-
+import Link from "next/link";
 const Donate = () => {
   return (
-    <button className="bg-primary py-3 px-10 lg:w-fit w-full text-white capitalize">
+    <Link href='https://flutterwave.com/donate/sgesl7p9jm54' className="bg-primary py-3 px-10 lg:w-fit w-full text-white capitalize rounded-md hover:bg-neutral-900 ">
       Donate Now
-    </button>
+    </Link>
   );
 };
 
