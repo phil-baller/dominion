@@ -134,5 +134,3 @@ We welcome contributions to this project! To contribute, follow these steps:
 This project is licensed under the Skaling License. See the [LICENSE](https://skaleway.com) file for details.
 
 ---
-
-Feel free to modify the content as per your project's requirements and specifics.
