@@ -1,6 +1,6 @@
-# Dominion Organization Website
+# Charity Organization Website
 
-Welcome to the Dominion Organization Website repository! This project is built using Next.js and Sanity CMS to promote charity events, share news, and provide information about the organization.
+Welcome to the Charity Organization Website repository! This project is built using Next.js and Sanity CMS to promote charity events, share news, and provide information about our organization.
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ Welcome to the Dominion Organization Website repository! This project is built u
 
 ## Introduction
 
-This project aims to create a user-friendly and interactive website for the charity organization. The website showcases our mission, upcoming events, latest news, and provides an easy way for visitors to get involved and donate.
+This project aims to create a user-friendly and interactive website for our charity organization. The website showcases our mission, upcoming events, latest news, and provides an easy way for visitors to get involved and donate.
 
 ## Features
 
@@ -42,13 +42,14 @@ To get started with this project, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/skaleway/dominion.git
+   git clone https://github.com/your-username/charity-organization-website.git
    cd charity-organization-website
    ```
 
-2. **Install dependencies**
+2. **Install dependencies:**
+
    ```bash
-    pnpm isntall
+   pnpm install
    ```
 
 ## Configuration
@@ -61,16 +62,12 @@ To get started with this project, follow these steps:
 
 2. **Configure environment variables:**
 
-   Create a `.env` file in the root of your project and add the following environment variables:
+   Create a `.env.local` file in the root of your project and add the following environment variables:
 
    ```bash
-   DATABASE_URL=""
-   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=""
-   CLERK_SECRET_KEY=""
-   NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=""
-   NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=""
-   UPLOADTHING_SECRET=""
-   UPLOADTHING_APP_ID=""
+   NEXT_PUBLIC_SANITY_PROJECT_ID=your-sanity-project-id
+   NEXT_PUBLIC_SANITY_DATASET=your-sanity-dataset
+   SANITY_API_TOKEN=your-sanity-api-token
    ```
 
 ## Running the Project
@@ -79,6 +76,15 @@ To get started with this project, follow these steps:
 
    ```bash
    pnpm dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+2. **Build for production:**
+
+   ```bash
+   pnpm build
+   pnpm start
    ```
 
 ## Deployment
@@ -103,8 +109,8 @@ We welcome contributions to this project! To contribute, follow these steps:
 2. **Clone the forked repository:**
 
    ```bash
-   git clone https://github.com/skaleway/dominion.git
-   cd dominion
+   git clone https://github.com/your-username/charity-organization-website.git
+   cd charity-organization-website
    ```
 
 3. **Create a new branch:**
@@ -116,7 +122,7 @@ We welcome contributions to this project! To contribute, follow these steps:
 4. **Make your changes and commit them:**
 
    ```bash
-   git commit -m "feat: Your changes here"
+   git commit -m "Your detailed description of the changes."
    ```
 
 5. **Push to the branch:**
@@ -131,7 +137,7 @@ We welcome contributions to this project! To contribute, follow these steps:
 
 ## License
 
-This project is licensed under the Skaling License. See the [LICENSE](https://skaleway.com) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
