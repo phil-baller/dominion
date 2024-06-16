@@ -12,9 +12,13 @@ const nextConfig = {
         protocol: "https",
         pathname: "**",
       },
+      {
+        hostname: "cdn.sanity.io",
+        protocol: "https",
+        pathname: "**",
+      },
     ],
   },
 };
-
 
 export default nextConfig;
