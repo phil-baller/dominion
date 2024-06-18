@@ -115,7 +115,7 @@ export const Impacts = () => {
       {
         name: "Amount Raised",
         icon: "/icons/ifund.svg",
-        number: 2.5,
+        number: 2.5 + 'M',
       },
       {
         name: "People helped",
@@ -189,7 +189,7 @@ export const contactForm = () => {
       },
       {
         name: "Website Administrator",
-        fields: ["Elvis Fusina", "fusinaelvis@gmail.com"],
+        fields: ["Philemon Tebo Tebo", "philballer41@gmail.com"],
       },
       {
         name: "General Inquiries",

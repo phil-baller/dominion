@@ -12,10 +12,30 @@ import {
 
 const Family = () => {
   const images = [
-    "https://via.placeholder.com/600/FF5733/000000?text=1",
-    "https://via.placeholder.com/600/FFC300/000000?text=2",
-    "https://via.placeholder.com/600/DAF7A6/000000?text=3",
+    "/icons/Founder.svg",
+    "/icons/President.svg",
+    "/icons/Secretary.svg",
+    "/icons/Finance.svg"
   ];
+
+  const names = [
+    {
+      name: "Azong Gustave Afuh",
+      position: "President"
+    },
+    {
+      name: "Langason Josephine Lum Fusina",
+      position: "1st Vice President"
+    },
+    {
+      name: "Chefor Ntukem epse Fru Blanding",
+      position: "Secretary"
+    },
+    {
+      name: "Awah Nicoline Sirri",
+      position: "Treasurer"
+    }
+  ]
 
   return (
     <section className="bg-white text-[#111] padding flex gap-10 flex-col">
@@ -32,14 +52,18 @@ const Family = () => {
                 <Image
                   className="max-w-full max-h-full rounded transition-opacity duration-300 ease-in-out clip"
                   src={image}
-                  width={300}
-                  height={200}
+                  width={400}
+                  height={100}
                   alt={`slide ${index + 1}`}
                 />
-                <section>
-                  <p className="text-primary">Name</p>
-                  <p>Position or Role</p>
-                </section>
+                {
+                  names[index] && (
+                    <section>
+                      <p className="text-primary">{names[index].name}</p>
+                      <p>{names[index].position}</p>
+                    </section>
+                  )
+                }
               </section>
             </CarouselItem>
           ))}
