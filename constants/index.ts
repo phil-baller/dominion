@@ -115,7 +115,7 @@ export const Impacts = () => {
       {
         name: "Amount Raised",
         icon: "/icons/ifund.svg",
-        number: 2.5,
+        number: 2.5 + 'M',
       },
       {
         name: "People helped",
