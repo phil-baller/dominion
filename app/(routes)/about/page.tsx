@@ -9,7 +9,7 @@ const About = () => {
     <main className="h-fit">
       <Hero />
       <Purpose />
-      <TeamAndVolunteers />
+      {/* <TeamAndVolunteers /> */}
       <Partners />
     </main>
   );
