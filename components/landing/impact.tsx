@@ -8,6 +8,9 @@ const Impact = () => {
   return (
     <section className="bg-white text-[#111] padding flex gap-10 flex-col">
       <Header content="Impact" />
+      <div className="flex justify-center items-center lg:text-lg text-base text-neutral-900 text-center">
+        Our initiative has helped thousands of women and children in primary healthcare, wealth creation, education, vocational trainings, reproductive health and sanitation in rural communities.
+      </div>
       <section className="max-w-7xl mx-auto flex gap-10  w-full lg:flex-row flex-col ">
         {impacts.map((impact) => (
           <section

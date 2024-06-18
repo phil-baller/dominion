@@ -189,7 +189,7 @@ export const contactForm = () => {
       },
       {
         name: "Website Administrator",
-        fields: ["Elvis Fusina", "fusinaelvis@gmail.com"],
+        fields: ["Philemon Tebo Tebo", "philballer41@gmail.com"],
       },
       {
         name: "General Inquiries",

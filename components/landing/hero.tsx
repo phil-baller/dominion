@@ -10,10 +10,10 @@ const Hero = () => {
         <h1 className="text-[40px] font-black lg:text-[64px] lg:leading-[70px]">
           Let’s make a <br /> difference
         </h1>
-        <p className="text-base">
-          We empower and equip the world to transform the poor and their{" "}
+        <p className="text-base lg:text-lg">
+          WIDCA is shaping the lives of women and young people by {" "}
           <br className="hidden lg:block" />
-          communities physically, mentally, morally, and spiritually.
+          giving them equal opportunities to live a better life!.
         </p>
       </section>
       <Donate />
