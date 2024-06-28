@@ -3,6 +3,7 @@ import Purpose from "@/components/about/purpose";
 import TeamAndVolunteers from "@/components/about/team-and-volunteers";
 import Partners from "@/components/landing/partners";
 import React from "react";
+import OurPrograms from "@/components/about/programs";
 
 const About = () => {
   return (
@@ -10,6 +11,7 @@ const About = () => {
       <Hero />
       <Purpose />
       {/* <TeamAndVolunteers /> */}
+      <OurPrograms />
       <Partners />
     </main>
   );
