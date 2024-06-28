@@ -15,17 +15,7 @@ const Mission = () => {
       />
       <section className="flex flex-col gap-4 text-center max-w-7xl mx-auto">
         <p>
-          Walking in Dominion Charity Organization, WIDCO, is supported by
-          Individuals just like you, who are doing all they can to help the
-          needy and orphans. Our mission is strictly on advancing the spread of
-          the gospel of our lord Jesus Christ (John 14:8), through charity to
-          orphans and the <br /> less privileged all over the world
-        </p>
-        <p>
-          Our short term goals include; providing food, accommodation, clothing
-          and allowance for the orphans. Our long-term goals include future
-          projects such as building of schools , hospitals and training centers
-          for apprenticeship including;
+          To form partnerships that will facilitate and improve the health, education and socioeconomic status of women, children and young people through empowerment, right-based approaches, innovative, sustainable and participatory strategies.
         </p>
       </section>
       <section className="flex lg:flex-row flex-col max-w-7xl mx-auto gap-8 w-full">
