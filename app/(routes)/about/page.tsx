@@ -12,7 +12,7 @@ const About = () => {
       <Purpose />
       {/* <TeamAndVolunteers /> */}
       <OurPrograms />
-      <Partners />
+      {/* <Partners /> */}
     </main>
   );
 };

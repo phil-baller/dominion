@@ -38,7 +38,7 @@ function ListPrograms({ name, link }: { name: string, link: string }) {
 
 function OurPrograms() {
     return (
-        <div className='w-container flex flex-col justify-center bg-white lg:px-16 px-4'>
+        <div className='w-container flex flex-col justify-center bg-white lg:px-16 px-4 pb-8'>
             <div className='font-bold lg:text-3xl text-2xl my-2 text-neutral-800'>Our Programs</div>
             <div className='flex flex-wrap gap-4'>
                 {

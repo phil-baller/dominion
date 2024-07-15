@@ -3,11 +3,13 @@ import React from "react";
 const BgText = () => {
   return (
     <section className="padding bgtext h-[458px] flex items-center flex-col gap-4 justify-center">
-      <p className="text-5xl text-center font-semibold">
-        We can’t help everyone, but everyone can help <br /> someone
+      <p className="text-lg text-center font-normal">
+        <div className="font-bold text-5xl text-white">How you can help</div>
+        Many of our projects depend on individual donations and the <br /> impact of our work is determined
+        by the resources we receive
       </p>
 
-      <button className="bg-primary py-3 px-10 w-fit">Donate Now</button>
+      <button className="bg-primary py-3 px-10 w-fit text-neutral-800 text-bold">Donate Now</button>
     </section>
   );
 };

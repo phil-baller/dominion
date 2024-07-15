@@ -19,7 +19,7 @@ const LandingPage = async () => {
       <Family />
       <Impact />
       <Blog isHeader />
-      <Partners />
+      {/* <Partners /> */}
     </main>
   );
 };
