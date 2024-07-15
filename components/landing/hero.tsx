@@ -17,7 +17,6 @@ const Hero = () => {
           giving them equal opportunities to live a better life!.
         </p>
       </section>
-      <Donate />
 
       <section className="hidden bg-white/90 absolute  right-20 w-fit p-3 lg:flex gap-2 h-[112px] -bottom-14 ">
         <Image
