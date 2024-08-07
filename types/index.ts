@@ -12,7 +12,7 @@ export type blogType = {
   content: any;
   overview: string;
   slug: {
-    current: string;
+    current?: string;
   };
   _createdAt: string;
   releaseDate: string;
