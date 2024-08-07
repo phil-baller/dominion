@@ -24,7 +24,7 @@ const Deeds = () => {
 
   return (
     <section className="padding bg-white text-[#111]">
-      <section className=" max-w-7xl w-full mx-auto flex flex-col gap-10">
+      <section className="max-w-7xl w-full mx-auto flex flex-col gap-10">
         <p className="text-2xl">Archives of Deeds</p>
 
         {pictures.isPending ? (

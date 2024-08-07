@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const WhatWeDo = async () => {
   return (
-    <main className="h-fit">
+    <main className="h-full">
       <Hero />
       <Deeds />
     </main>
