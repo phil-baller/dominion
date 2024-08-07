@@ -8,18 +8,19 @@ import Partners from "@/components/landing/partners";
 import Video from "@/components/landing/video";
 import WhatweDo from "@/components/landing/what-we-do";
 import React from "react";
-
+import PaymentDetails from "@/components/PaymentInfo/PayDetails";
 const LandingPage = async () => {
   return (
     <main className="flex flex-col ">
       <Hero />
       <WhatweDo />
       <BgText />
+      <PaymentDetails />
       <Mission />
       <Family />
       <Impact />
       <Blog isHeader />
-      <Partners />
+      {/* <Partners /> */}
     </main>
   );
 };
