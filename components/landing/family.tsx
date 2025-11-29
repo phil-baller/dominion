@@ -1,7 +1,6 @@
 import Image from "next/image";
-
 import * as React from "react";
-
+import Header from "../header";
 import {
   Carousel,
   CarouselContent,
@@ -35,42 +34,58 @@ const Family = () => {
       name: "Awah Nicoline Sirri",
       position: "Treasurer"
     }
-  ]
+  ];
 
   return (
-    <section className="bg-white text-[#111] padding flex gap-10 flex-col">
-      <Carousel
-        opts={{
-          align: "center",
-        }}
-        className="w-full max"
-      >
-        <CarouselContent>
-          {images.map((image, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <section className="mx-2" key={index}>
-                <Image
-                  className="max-w-full max-h-full rounded transition-opacity duration-300 ease-in-out clip"
-                  src={image}
-                  width={400}
-                  height={100}
-                  alt={`slide ${index + 1}`}
-                />
-                {
-                  names[index] && (
-                    <section>
-                      <p className="text-primary">{names[index].name}</p>
-                      <p>{names[index].position}</p>
-                    </section>
-                  )
-                }
-              </section>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+    <section className="bg-white text-[#111] py-20 lg:py-28 px-4 lg:px-8 xl:px-20">
+      <div className="max-w-7xl mx-auto flex flex-col gap-12">
+        <div className="text-center max-w-3xl mx-auto">
+          <Header content="Our Leadership Team" />
+          <p className="mt-6 text-base lg:text-lg text-neutral-600 leading-relaxed">
+            Meet the dedicated leaders driving our mission forward and making a lasting impact in communities across Cameroon.
+          </p>
+        </div>
+
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {images.map((image, index) => (
+              <CarouselItem
+                key={index}
+                className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+              >
+                <div className="group bg-white border border-neutral-200 rounded-xl overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="relative w-full h-80 overflow-hidden bg-neutral-100">
+                    <Image
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      src={image}
+                      width={400}
+                      height={400}
+                      alt={names[index]?.name || `Team member ${index + 1}`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-[#111] mb-1 group-hover:text-primary transition-colors duration-200">
+                      {names[index]?.name || "Team Member"}
+                    </h3>
+                    <p className="text-primary font-medium text-sm">
+                      {names[index]?.position || "Position"}
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden lg:flex -left-12" />
+          <CarouselNext className="hidden lg:flex -right-12" />
+        </Carousel>
+      </div>
     </section>
   );
 };

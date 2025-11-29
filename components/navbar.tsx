@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import HamburgerIcon from "./hamburger";
+import Donate from "./donatebtn";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -17,76 +18,143 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 0;
+      const isScrolled = window.scrollY > 50;
       setScrolled(isScrolled);
     };
 
-    // Add event listener for scroll events
     window.addEventListener("scroll", handleScroll);
-
-    if (window.scrollY > 0) {
-      window.addEventListener("scroll", handleScroll);
-    }
-    // Clean up the event listener when component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty dependency array ensures this effect runs only once
+  }, []);
+
+  useEffect(() => {
+    if (isActive) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isActive]);
 
   return (
-    <header className="h-20 flex w-full items-center lg:px-20 px-4 justify-between fixed left-0 top-0 z-[999]">
-      <div
-        className={cn("absolute inset-0 duration-300 z-[-1]", {
-          "bg-[#111] backdrop-blur-lg": scrolled,
-        })}
-      />
+    <header
+      className={cn(
+        "h-20 flex w-full items-center lg:px-8 xl:px-20 px-4 justify-between fixed left-0 top-0 z-[999] transition-all duration-300",
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
+      )}
+    >
       <Logo />
 
-      <nav>
-        <ul className="lg:flex gap-8 hidden">
+      <nav className="hidden lg:flex items-center gap-8">
+        <ul className="flex gap-6 items-center">
           {routes.map((route, index) => (
             <Link
               href={route.path}
               key={index}
               className={cn(
-                "font-normal text-base",
-                pathname === route.path && "text-primary"
+                "font-medium text-sm transition-colors duration-200 relative group",
+                pathname === route.path
+                  ? "text-primary font-semibold"
+                  : "text-[#111] hover:text-primary"
               )}
             >
               {route.name}
+              {pathname === route.path && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary" />
+              )}
             </Link>
           ))}
         </ul>
+        <div className="ml-4">
+          <Donate />
+        </div>
       </nav>
-      <HamburgerIcon
-        isActive={isActive}
-        onClick={() => setIsActive((prev) => !prev)}
-      />
 
-      <div
-        className={`${
-          isActive ? "right-0" : "-right-full"
-        }  bg-white w-full fixed transition-all text-[#111] top-0 h-screen p-4 z-0`}
-        onClick={() => setIsActive(false)}
-      >
-        <Logo />
-        <hr className="mt-2" />
-
-        <ul className="flex flex-col gap-8 mt-10">
-          {routes.map((route, index) => (
-            <Link
-              href={route.path}
-              key={index}
-              className={cn(
-                "font-normal text-base",
-                pathname === route.path && "text-primary"
-              )}
-            >
-              {route.name}
-            </Link>
-          ))}
-        </ul>
+      <div className="lg:hidden flex items-center gap-4">
+        <div className="lg:hidden">
+          <Donate />
+        </div>
+        <button
+          onClick={() => setIsActive((prev) => !prev)}
+          className="relative z-[1000] p-2"
+          aria-label="Toggle menu"
+          aria-expanded={isActive}
+        >
+          <HamburgerIcon isActive={isActive} onClick={() => {}} />
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={cn(
+          "lg:hidden fixed top-0 right-0 w-full max-w-sm h-screen bg-white shadow-2xl transition-transform duration-300 ease-in-out z-[998] overflow-y-auto",
+          isActive ? "translate-x-0" : "translate-x-full"
+        )}
+      >
+        <div className="flex flex-col h-full">
+          <div className="flex items-center justify-between p-6 border-b">
+            <Logo />
+            <button
+              onClick={() => setIsActive(false)}
+              className="p-2 text-[#111] hover:text-primary transition-colors"
+              aria-label="Close menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <nav className="flex-1 p-6">
+            <ul className="flex flex-col gap-6">
+              {routes.map((route, index) => (
+                <li key={index}>
+                  <Link
+                    href={route.path}
+                    onClick={() => setIsActive(false)}
+                    className={cn(
+                      "font-medium text-base py-2 block transition-colors duration-200",
+                      pathname === route.path
+                        ? "text-primary font-semibold border-l-4 border-primary pl-4"
+                        : "text-[#111] hover:text-primary hover:pl-4 transition-all"
+                    )}
+                  >
+                    {route.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="p-6 border-t">
+            <p className="text-sm text-neutral-600 mb-4">
+              Join us in making a difference
+            </p>
+            <Donate />
+          </div>
+        </div>
+      </div>
+
+      {/* Overlay */}
+      {isActive && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/50 z-[997]"
+          onClick={() => setIsActive(false)}
+        />
+      )}
     </header>
   );
 };

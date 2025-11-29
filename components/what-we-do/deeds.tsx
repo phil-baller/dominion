@@ -23,9 +23,17 @@ const Deeds = () => {
   };
 
   return (
-    <section className="padding bg-white text-[#111]">
-      <section className="max-w-7xl w-full mx-auto flex flex-col gap-10">
-        <p className="text-2xl">Archives of Deeds</p>
+    <section className="py-20 lg:py-28 px-4 lg:px-8 xl:px-20 bg-white text-[#111]">
+      <section className="max-w-7xl w-full mx-auto flex flex-col gap-12">
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-black text-[#111] mb-4 relative inline-block">
+            Archives of Deeds
+            <span className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary rounded-full" />
+          </h2>
+          <p className="mt-6 text-base lg:text-lg text-neutral-600 leading-relaxed">
+            A visual journey through our impactful work and the lives we've touched.
+          </p>
+        </div>
 
         {pictures.isPending ? (
           <Masonry

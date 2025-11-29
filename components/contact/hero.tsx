@@ -4,10 +4,18 @@ import Donate from "../donatebtn";
 
 const Hero = () => {
   return (
-    <section className="lg:h-80 h-96 lg:px-20 px-4 relative flex justify-center flex-col gap-5">
-      <PageTextHero content="Contact Us" />
-      <p className="lg:text-2xl text-base">Where to find us!!</p>
-      <Donate />
+    <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center px-4 lg:px-8 xl:px-20 pt-32 pb-20 overflow-hidden bg">
+      <div className="relative z-10 max-w-7xl mx-auto w-full">
+        <div className="text-white flex flex-col gap-6">
+          <PageTextHero content="Contact Us" />
+          <p className="text-lg lg:text-xl text-neutral-200 leading-relaxed max-w-3xl">
+            Where to find us! Get in touch with our team.
+          </p>
+          <div className="mt-4">
+            <Donate />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

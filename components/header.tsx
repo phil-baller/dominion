@@ -10,10 +10,11 @@ interface headerProps {
 
 const Header: FC<headerProps> = ({ isSpan, spanText, spanClass, content }) => {
   return (
-    <p className="lg:text-4xl text-2xl self-center relative">
-      {content} {isSpan && <span className={cn(spanClass)}>{spanText}</span>}
-      <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-[107px] h-[3px] bg-primary" />
-    </p>
+    <h2 className="lg:text-4xl xl:text-5xl text-3xl font-black text-[#111] self-center relative inline-block">
+      {content}{" "}
+      {isSpan && <span className={cn(spanClass)}>{spanText}</span>}
+      <span className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary rounded-full" />
+    </h2>
   );
 };
 
