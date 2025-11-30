@@ -14,10 +14,6 @@ export default function PaymentDetails() {
                         <span><Image src={UbaLogo} width={70} height={40} alt="UBA Logo" /></span> &nbsp;
                         10031000194
                     </div>
-                    <div className="text-lg lg:text-4xl text-neutral-800 font-base flex flex-col lg:flex-row items-center my-2 gap-2">
-                        <span><Image src={Paypal} width={80} height={50} alt="UBA Logo" /></span> &nbsp;
-                        generalgustave1994@gmail.com
-                    </div>
                 </div>
             </div>
         </div>
