@@ -77,13 +77,13 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className="lg:hidden flex items-center gap-4">
-        <div className="lg:hidden">
-          <Donate />
-        </div>
+      <div className="lg:hidden flex items-center">
         <button
           onClick={() => setIsActive((prev) => !prev)}
-          className="relative z-[1000] p-2"
+          className={cn(
+            "relative z-[1000] p-2 transition-opacity duration-300 flex items-center justify-center",
+            isActive ? "opacity-0 pointer-events-none" : "opacity-100"
+          )}
           aria-label="Toggle menu"
           aria-expanded={isActive}
         >
