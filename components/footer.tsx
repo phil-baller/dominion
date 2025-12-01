@@ -14,27 +14,31 @@ const Footer = () => {
   const socials = socialsIcons();
 
   return (
-    <footer className="bg-[#111] flex flex-col padding gapadding">
-      <section className="lg:w-2/4 w-full gap-20 flex gapadding lg:flex-row flex-col ">
-        <section className="flex flex-1 flex-col gap-[26px]">
-          <Logo />
-          <p>
-            We empower and equip the world to transform the poor and their
-            communities physically, mentally, morally, and spiritually
-          </p>
-        </section>
-        <section className="flex flex-1 gap-10">
-          <section className="flex flex-1 flex-col gap-10">
-            <p className="text-2xl relative before:h-full before:w-[3px] before:bg-primary before:absolute before:left-[-10px]">
+    <footer className="bg-[#111] padding">
+      <div className="max-w-7xl mx-auto flex flex-col gap-12">
+        {/* Main Footer Content */}
+        <section className="flex lg:flex-row flex-col lg:justify-between lg:items-start gap-12 lg:gap-8">
+          {/* Logo and Mission Section */}
+          <section className="flex flex-col gap-6 lg:max-w-md">
+            <Logo />
+            <p className="text-base text-gray-300 leading-relaxed">
+              We empower and equip the world to transform the poor and their
+              communities physically, mentally, morally, and spiritually
+            </p>
+          </section>
+
+          {/* Quick Links Section */}
+          <section className="flex flex-col gap-6">
+            <p className="text-2xl font-semibold relative before:h-full before:w-[3px] before:bg-primary before:absolute before:left-[-10px] pl-3">
               Quick links
             </p>
-            <ul className="flex flex-col gap-2 ml-5">
+            <ul className="flex flex-col gap-3">
               {routes.map((route, index) => (
                 <Link
                   href={route.path}
                   key={index}
                   className={cn(
-                    "font-normal text-base",
+                    "font-normal text-base text-gray-300 hover:text-primary transition-colors duration-200",
                     pathname === route.path && "text-primary"
                   )}
                 >
@@ -43,40 +47,66 @@ const Footer = () => {
               ))}
             </ul>
           </section>
-          <section className="flex flex-col items-end gap-6 lg:hidden">
-            <p className="text-2xl relative before:h-full before:w-[3px] before:bg-primary before:absolute before:left-[-10px]">
-              Socials
+
+          {/* Social Links Section - Desktop Only */}
+          <section className="hidden lg:flex flex-col gap-6 items-start">
+            <p className="text-2xl font-semibold relative before:h-full before:w-[3px] before:bg-primary before:absolute before:left-[-10px] pl-3">
+              Follow Us
             </p>
+            <div className="flex items-center gap-4">
+              {socials.map((social) => (
+                <Link
+                  href={social.path}
+                  key={social.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-primary transition-colors duration-200"
+                  aria-label={social.name}
+                >
+                  <Image
+                    src={social.icon}
+                    width={24}
+                    height={24}
+                    alt={social.name}
+                    className="hover:opacity-80 transition-opacity"
+                  />
+                </Link>
+              ))}
+            </div>
+          </section>
+        </section>
+
+        {/* Divider */}
+        <div className="border-t border-gray-800"></div>
+
+        {/* Copyright and Social Links - Mobile */}
+        <section className="flex flex-col lg:flex-row items-center justify-between gap-6">
+          <p className="text-sm text-gray-400 text-center lg:text-left">
+            Copyright 2023 Walking In Dominion. All Rights Reserved
+          </p>
+          {/* Social Links - Mobile (shown below copyright) */}
+          <div className="flex items-center gap-4 lg:hidden">
             {socials.map((social) => (
-              <Link href={social.path} key={social.name} target="_blank">
+              <Link
+                href={social.path}
+                key={social.name}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-primary transition-colors duration-200"
+                aria-label={social.name}
+              >
                 <Image
                   src={social.icon}
                   width={24}
                   height={24}
                   alt={social.name}
+                  className="hover:opacity-80 transition-opacity"
                 />
               </Link>
             ))}
-          </section>
+          </div>
         </section>
-      </section>
-      <section className="flex items-center justify-between">
-        <p className="text-center lg:text-left">
-          Copyright 2023 Walking In Dominion. All Rights Reserved
-        </p>
-        <section className="lg:flex items-center gap-6 hidden">
-          {socials.map((social) => (
-            <Link href={social.path} key={social.name}>
-              <Image
-                src={social.icon}
-                width={24}
-                height={24}
-                alt={social.name}
-              />
-            </Link>
-          ))}
-        </section>
-      </section>
+      </div>
     </footer>
   );
 };
