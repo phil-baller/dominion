@@ -132,6 +132,23 @@
   }
 }
 
+/* Photo Album Gallery Styles */
+.react-photo-album--photo {
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.react-photo-album--photo:hover {
+  transform: scale(1.05);
+}
+
+.react-photo-album--photo img {
+  border-radius: 8px;
+  object-fit: cover;
+}
+
 .padding {
   @apply lg:px-20 px-4 py-20;
 }
