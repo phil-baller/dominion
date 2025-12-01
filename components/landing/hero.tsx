@@ -42,7 +42,7 @@ const Hero = () => {
                   <p className="text-2xl lg:text-3xl font-bold text-primary">
                     {impact.number}+
                   </p>
-                  <p className="text-xs lg:text-sm text-neutral-400 font-medium">
+                  <p className="text-xs lg:text-sm text-neutral-400">
                     {impact.name}
                   </p>
                 </div>

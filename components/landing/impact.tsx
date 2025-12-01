@@ -54,7 +54,7 @@ const Impact = () => {
               <div className="text-4xl lg:text-5xl font-black text-primary mb-2">
                 {impact.number}+
               </div>
-              <p className="text-lg font-semibold text-[#111]">
+              <p className="text-lg text-[#111]">
                 {impact.name}
               </p>
             </div>

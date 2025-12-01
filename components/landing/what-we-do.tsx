@@ -44,7 +44,7 @@ const WhatweDo = () => {
 
               <Link
                 href="/what-we-do"
-                className="text-primary font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all duration-200"
+                className="text-primary text-sm flex items-center gap-2 group-hover:gap-3 transition-all duration-200"
               >
                 Learn more
                 <svg

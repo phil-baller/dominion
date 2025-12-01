@@ -58,7 +58,7 @@ const Post = ({ post }: { post: blogType }) => {
 
       <div className="flex flex-col gap-4 p-6 flex-1">
         <div className="flex items-center gap-3 text-xs text-neutral-500">
-          <span className="font-medium">By Admin</span>
+          <span>By Admin</span>
           <span>•</span>
           <time>{formattedDate}</time>
         </div>
@@ -71,7 +71,7 @@ const Post = ({ post }: { post: blogType }) => {
           {post.overview}
         </p>
 
-        <div className="mt-auto pt-4 flex items-center text-primary font-semibold text-sm group-hover:gap-2 transition-all duration-200">
+        <div className="mt-auto pt-4 flex items-center text-primary text-sm group-hover:gap-2 transition-all duration-200">
           Read more
           <svg
             className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200"

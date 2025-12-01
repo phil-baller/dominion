@@ -48,7 +48,7 @@ const Mission = () => {
               We look forward to working with individuals like you to help the orphans and the needy.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 text-sm lg:text-base">
-              <span className="text-primary font-semibold">#Gustave</span>
+              <span className="text-primary">#Gustave</span>
               <span className="text-neutral-600">#ManOfGod</span>
               <span className="text-neutral-600">#GeneralOverseer</span>
             </div>

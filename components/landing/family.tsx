@@ -74,7 +74,7 @@ const Family = () => {
                     <h3 className="text-xl font-bold text-[#111] mb-1 group-hover:text-primary transition-colors duration-200">
                       {names[index]?.name || "Team Member"}
                     </h3>
-                    <p className="text-primary font-medium text-sm">
+                    <p className="text-primary text-sm">
                       {names[index]?.position || "Position"}
                     </p>
                   </div>
