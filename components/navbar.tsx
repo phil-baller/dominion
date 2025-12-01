@@ -60,7 +60,9 @@ const Navbar = () => {
                 "font-medium text-sm transition-colors duration-200 relative group",
                 pathname === route.path
                   ? "text-primary font-semibold"
-                  : "text-[#111] hover:text-primary"
+                  : scrolled
+                  ? "text-[#111] hover:text-primary"
+                  : "text-white hover:text-primary"
               )}
             >
               {route.name}
@@ -85,7 +87,7 @@ const Navbar = () => {
           aria-label="Toggle menu"
           aria-expanded={isActive}
         >
-          <HamburgerIcon isActive={isActive} onClick={() => {}} />
+          <HamburgerIcon isActive={isActive} scrolled={scrolled} onClick={() => {}} />
         </button>
       </div>
 
